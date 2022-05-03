@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+
+<configuration>
+	<typeAliases>
+		<typeAlias alias="Post" type="com.walab.projecters.Bean.Post"/>
+		<typeAlias alias="Ddib" type="com.walab.projecters.Bean.Ddib"/>
+		<typeAlias alias="User" type="com.walab.projecters.Bean.User"/>
+		<typeAlias alias="Form" type="com.walab.projecters.Bean.Form"/>
+		<typeAlias alias="Banner" type="com.walab.projecters.Bean.Banner"/>
+		<typeAlias alias="UserPost" type="com.walab.projecters.Bean.UserPost"/>
+		<typeAlias alias="Tag" type="com.walab.projecters.Bean.Tag"/>
+		<typeAlias alias="TagCount" type="com.walab.projecters.Bean.TagCount"/>
+		
+	</typeAliases>
+</configuration>
