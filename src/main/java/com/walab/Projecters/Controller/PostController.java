@@ -1,6 +1,10 @@
 package com.walab.Projecters.Controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 /*
 * 프로젝트 만들기
@@ -11,4 +15,11 @@ import org.springframework.stereotype.Controller;
 * */
 @Controller
 public class PostController {
+	@RequestMapping(value = "/post", method = RequestMethod.GET)
+	public ModelAndView post(Model model) {
+		
+		ModelAndView mv = new ModelAndView();
+		System.out.println("post loaded");
+		return ;
+	}
 }
