@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 * 를 담당하는 컨트롤러
 * */
 @Controller
+@RequestMapping("/post")
 public class PostController {
 //	@RequestMapping(value = "/post", method = RequestMethod.GET)
 //	public ModelAndView post(Model model) {
@@ -22,4 +23,10 @@ public class PostController {
 //		System.out.println("post loaded");
 //		// return ;
 //	}
+	
+	@RequestMapping(value = "/projectform")
+	public String projectform() {
+		System.out.println("==> projectform() in PostController: move to ProjectForm page");
+		return "ProjectForm";
+	}
 }

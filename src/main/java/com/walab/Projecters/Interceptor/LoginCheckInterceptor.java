@@ -13,7 +13,7 @@ public class LoginCheckInterceptor extends HandlerInterceptorAdapter {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 		// TODO Auto-generated method stub
-		System.out.println("preHandle() in LoginCheckInterceptor works!");
+		System.out.println("==> preHandle() in LoginCheckInterceptor: Check login object whether it exists or not");
 		HttpSession session = request.getSession(); //session을 가져온다.
 		Object obj = session.getAttribute("login"); //session에 있는 'login' attribute를 가져와서 객체로 저장한다.
 		if(obj == null) {

@@ -19,14 +19,14 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         
-        <link href="../../css/styles.css" rel="stylesheet" />
-        <link href="../../css/postform.css" rel="stylesheet" />
+        <link href="../resources/css/styles.css" rel="stylesheet" />
+        <link href="../resources/css/postform.css" rel="stylesheet" />
     </head>
     <body id="page-top">
         <!-- Navigation-->
         <nav class="sb-topnav navbar navbar-expand justify-content-between">
             <!-- Navbar Brand-->
-            <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png"></a>
+            <a class="navbar-brand" href="index.html"><img src="../resources/img/logo.png"></a>
             <a class="nav-link" href="mypage1.html">
                 Mypage
             </a>
@@ -68,6 +68,6 @@
             </main>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="../../js/scripts.js"></script>
+        <script src="../resources/js/scripts.js"></script>
     </body>
 </html>
