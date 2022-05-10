@@ -19,15 +19,15 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="../../css/main.css" rel="stylesheet" />
-        <link href="../../css/styles.css" rel="stylesheet" />
+        <link href="../resources/css/main.css" rel="stylesheet" />
+        <link href="../resources/css/styles.css" rel="stylesheet" />
 </head>
     <body id="page-top">
         <!-- Navigation-->
         <nav class="sb-topnav navbar navbar-expand justify-content-between">
             <!-- Navbar Brand-->
-            <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png"></a>
-            <a class="nav-link" href="mypage1.html">
+            <a class="navbar-brand" href="index.html"><img src="../resources/img/logo.png"></a>
+            <a class="nav-link" href="${pageContext.request.contextPath}/mypage/mypage1">
                 Mypage
             </a>
         </nav>
@@ -35,7 +35,7 @@
         <header class="masthead  text-black text-center">
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar mb-5" src="assets/img/main.png"  alt="..." />
+                <img class="masthead-avatar mb-5" src="../resources/img/main.png"  alt="..." />
                 <!-- Masthead Heading-->
                 <h1 class="masthead-heading text-uppercase mb-0">당신에게 맞는 팀을 찾으세요</h1>
               
@@ -49,7 +49,7 @@
                 </form>
                 <div class="tagtitle btn-toolbar justify-content-between">
                     <h6>지금 인기있는 프로젝트 태그 TOP10 👋</h6>
-                    <button type="button" onclick="location.href='addPost.html' ">팀원 모집 글쓰기</button>
+                    <button type="button" onclick="location.href='${pageContext.request.contextPath}/post/createproject'">팀원 모집 글쓰기</button>
                 </div>
             </div>
         </header>

@@ -27,7 +27,7 @@
 		
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
-		<url-pattern>/</url-pattern>
+		<url-pattern>/</url-pattern> <!-- url 시작값 설정하는 곳 -->
 	</servlet-mapping>
 
 	<filter> 

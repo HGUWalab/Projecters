@@ -1,6 +1,8 @@
 package com.walab.Projecters.Controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 
 /*
@@ -8,5 +10,21 @@ import org.springframework.stereotype.Controller;
 * 담당하는 컨트롤러
 * */
 @Controller
+@RequestMapping("/mypage")
 public class MyPageController {
+	
+	@RequestMapping(value = "/mypage1", method = RequestMethod.GET)
+	public String mypage1() {
+		return "Mypage1";
+	}
+	
+	@RequestMapping(value = "/mypage2", method = RequestMethod.GET)
+	public String mypage2() {
+		return "Mypage2";
+	}
+	
+	@RequestMapping(value = "/mypage3", method = RequestMethod.GET)
+	public String mypage3() {
+		return "Mypage3";
+	}
 }

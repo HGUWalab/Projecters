@@ -8,11 +8,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 * 메인페이지 담당하는 컨트롤러
 * */
 @Controller
-@RequestMapping("/main")
-public class MainController {
+public class HomeController {
 
-	@RequestMapping(value = "/mainpage", method = RequestMethod.GET)
-	public String main() {		
-		return "Main";
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String home() {		
+		return "redirect:/main/mainpage";
 	}
 }

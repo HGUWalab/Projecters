@@ -15,11 +15,11 @@ import org.springframework.web.servlet.ModelAndView;
 * */
 @Controller
 public class PostController {
-	@RequestMapping(value = "/post", method = RequestMethod.GET)
-	public ModelAndView post(Model model) {
-		
-		ModelAndView mv = new ModelAndView();
-		System.out.println("post loaded");
-		return ;
-	}
+//	@RequestMapping(value = "/post", method = RequestMethod.GET)
+//	public ModelAndView post(Model model) {
+//		
+//		ModelAndView mv = new ModelAndView();
+//		System.out.println("post loaded");
+//		// return ;
+//	}
 }

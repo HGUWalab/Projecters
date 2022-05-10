@@ -10,7 +10,7 @@
         <meta name="author" content="" />
         <title>Projecters</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-        <link href="../../css/styles.css" rel="stylesheet" />
+        <link href="../resources/css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
@@ -18,7 +18,7 @@
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-0 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Brand-->
-            <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png"></a>
+            <a class="navbar-brand" href="index.html"><img src="../resources/img/logo.png"></a>
             
             <!-- Navbar Search-->
             
@@ -40,13 +40,13 @@
                 <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <a class="nav-link" href="mypage1.html">
+                            <a class="nav-link" href="${pageContext.request.contextPath}/mypage/mypage1">
                                 내가 올린 프로젝트 
                             </a>
-                            <a class="nav-link" href="mypage2.html">
+                            <a class="nav-link" href="${pageContext.request.contextPath}/mypage/mypage2">
                                 내가 신청한 프로젝트
                             </a>
-                            <a class="nav-link" href="mypage3.html">
+                            <a class="nav-link" href="${pageContext.request.contextPath}/mypage/mypage3">
                                 내가 찜한 프로젝트
                             </a>
                         </div>
