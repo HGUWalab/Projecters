@@ -19,8 +19,8 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         
-        <link href="css/styles.css" rel="stylesheet" />
-        <link href="css/postform.css" rel="stylesheet" />
+        <link href="../../css/styles.css" rel="stylesheet" />
+        <link href="../../css/postform.css" rel="stylesheet" />
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -68,6 +68,6 @@
             </main>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="js/scripts.js"></script>
+        <script src="../../js/scripts.js"></script>
     </body>
 </html>
