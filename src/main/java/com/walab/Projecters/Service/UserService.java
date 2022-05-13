@@ -1,5 +1,8 @@
 package com.walab.Projecters.Service;
 
-public interface UserService {
+import com.walab.Projecters.Bean.User;
 
+public interface UserService {
+	public void insertUser(User vo);
+	public User getUser(User vo);
 }

@@ -13,6 +13,5 @@
 		<typeAlias alias="UserPost" type="com.walab.Projecters.Bean.UserPost"/>
 		<typeAlias alias="Tag" type="com.walab.Projecters.Bean.Tag"/>
 		<typeAlias alias="TagCount" type="com.walab.Projecters.Bean.TagCount"/>
-		
 	</typeAliases>
 </configuration>

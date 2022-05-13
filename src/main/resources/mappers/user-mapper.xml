@@ -1,3 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="User"></mapper>
+<mapper namespace="User">
+	<select id="getUser" resultType="User">
+		select user_id, name, email from User 
+		where email=#{email} and name=#{name}
+	</select>
+	<insert id="insertUser">
+		insert into User (email, name) 
+		values (#{email}, #{name})
+	</insert>
+</mapper>
