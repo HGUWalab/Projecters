@@ -22,13 +22,13 @@
         <link href="../resources/css/main.css" rel="stylesheet" />
         <link href="../resources/css/styles.css" rel="stylesheet" />
 </head>
-    <body id="page-top">
+     <body id="page-top">
         <!-- Navigation-->
         <nav class="sb-topnav navbar navbar-expand justify-content-between">
             <!-- Navbar Brand-->
             <a class="navbar-brand" href="index.html"><img src="../resources/img/logo.png"></a>
-            <a class="nav-link" href="${pageContext.request.contextPath}/mypage/mypage1">
-                Mypage
+            <a class="nav-link" href="mypage1.html">
+                <h3>Mypage</h3>
             </a>
         </nav>
         <!-- Masthead-->
@@ -37,10 +37,10 @@
                 <!-- Masthead Avatar Image-->
                 <img class="masthead-avatar mb-5" src="../resources/img/main.png"  alt="..." />
                 <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">당신에게 맞는 팀을 찾으세요</h1>
+                <h1 class="t1 masthead-heading mb-0">당신에게 맞는 팀을 찾으세요</h1>
               
                 <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">기획, 디자인, 개발 어떤 경험이든 Projecters에 있습니다. </p>
+                <p class="b1 mb-0">기획, 디자인, 개발 어떤 경험이든 팀플in에 있습니다. </p>
                 <form class="d-md-inline-block mt-5 mb-5">
                     <div class="input-group">
                         <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
@@ -48,9 +48,11 @@
                     </div>
                 </form>
                 <div class="tagtitle btn-toolbar justify-content-between">
-                    <h6>지금 인기있는 프로젝트 태그 TOP10 👋</h6>
-                    <button type="button" onclick="location.href='${pageContext.request.contextPath}/post/createproject'">팀원 모집 글쓰기</button>
+                    <h3>지금 인기있는 프로젝트 태그 TOP10 👋</h3>
+                    <button class="actionButton" type="button" onclick="location.href='${pageContext.request.contextPath}/post/projectform'">팀원 모집 글쓰기</button>
                 </div>
             </div>
+            
         </header>
+        </body>
 </html>
