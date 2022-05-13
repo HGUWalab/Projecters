@@ -15,4 +15,9 @@ public class MainController {
 	public String main() {		
 		return "Main";
 	}
+	
+	@RequestMapping(value = "/project", method = RequestMethod.GET)
+	public String project() {		
+		return "Project";
+	}
 }
