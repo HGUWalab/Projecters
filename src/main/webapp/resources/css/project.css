@@ -1,0 +1,95 @@
+
+.thumb{
+    width: 100%;
+    height: 450px;
+    object-fit:cover;
+}
+
+.applycount{
+    width: 259px;
+    height: 38px;
+    background: #EBFCD9;
+    border-radius: 30px;
+    vertical-align: middle;
+    margin-top: 73px;
+}
+
+text-green{
+    color: #32A120;
+}
+text-primary{
+    color: #6F56F4;
+}
+text-red{
+    color: #C04040;
+}
+
+.projectTitle{
+    margin: 10px 0;
+    
+}
+
+.subTitle{
+    margin-top: 50px;
+    margin-bottom: 20px; 
+}
+
+
+
+.tags{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.tag{
+    justify-content: center;
+    align-items: center;
+    padding: 6px 20px;
+    background: #F1F1F1;
+    border-radius: 7px;
+    margin-right: 17px;
+    height: 29px;
+}
+
+.description{
+    margin-bottom: 105px;
+}
+.ddibCount, .projectButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+
+.projectButtons{
+    margin-top: 20px;
+    margin-bottom: 400px;
+}
+
+.bigButton{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    padding: 12px 32px;
+
+    width: 200px;
+    height: 50px;
+    background: #6F56F4;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 400px;
+}
+.first{
+    margin-right: 20px;
+}
+
+.bigButton h3{
+    color: white;
+}
+
+.iconify{
+    margin-right: 7px;
+}
