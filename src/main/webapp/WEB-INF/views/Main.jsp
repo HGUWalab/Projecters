@@ -26,7 +26,7 @@
         <!-- Navigation-->
         <nav class="sb-topnav navbar navbar-expand justify-content-between">
             <!-- Navbar Brand-->
-            <a class="navbar-brand" href="index.html"><img src="../resources/img/logo.png"></a>
+            <a class="navbar-brand" onclick="location.href='${pageContext.request.contextPath}/main/mainpage'"><img src="../resources/img/logo.png"></a>
             <a class="nav-link" href="mypage1.html">
                 <h3>Mypage</h3>
             </a>

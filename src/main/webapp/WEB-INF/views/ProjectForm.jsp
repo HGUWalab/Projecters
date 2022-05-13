@@ -23,14 +23,14 @@
         <link href="../resources/css/postform.css" rel="stylesheet" />
     </head>
     <body id="page-top">
-        <!-- Navigation-->
-        <nav class="sb-topnav navbar navbar-expand justify-content-between">
-            <!-- Navbar Brand-->
-            <a class="navbar-brand" href="index.html"><img src="../resources/img/logo.png"></a>
-            <a class="nav-link" href="mypage1.html">
-                Mypage
-            </a>
-        </nav>
+	<!-- Navigation-->
+    <nav class="sb-topnav navbar navbar-expand justify-content-between">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand" onclick="location.href='${pageContext.request.contextPath}/main/mainpage'"><img src="../resources/img/logo.png"></a>
+        <a class="nav-link" href="mypage1.html">
+            <h3>Mypage</h3>
+        </a>
+    </nav>
         <div id="layoutAuthentication_content">
             <main>
                 <div class="container">
@@ -57,7 +57,7 @@
                                         </div>
                                         
                                         <div class="mt-4 mb-0">
-                                            <div class="d-grid"><a class="btn btn-primary btn-block" href="index.html">완료</a></div>
+                                            <div class="d-grid"><a class="btn btn-primary btn-block" onclick="location.href='${pageContext.request.contextPath}/main/project'">>완료</a></div>
                                         </div>
                                     </form>
                                 </div>

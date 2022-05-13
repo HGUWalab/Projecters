@@ -14,15 +14,16 @@
 </head>
 
 <body id="page-top">
-    <!-- Navigation-->
+<!-- Navigation-->
     <nav class="sb-topnav navbar navbar-expand justify-content-between">
         <!-- Navbar Brand-->
-        <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png"></a>
+        <a class="navbar-brand" onclick="location.href='${pageContext.request.contextPath}/main/mainpage'"><img src="../resources/img/logo.png"></a>
         <a class="nav-link" href="mypage1.html">
-            Mypage
+            <h3>Mypage</h3>
         </a>
     </nav>
-    <img class="thumb" src="assets/img/thumb.jpg">
+   
+    <img class="thumb" src="../resources/img/thumb.jpg">
     <div class="container">
         <div class="applycount text-center align-content-center">
             <h6 class="b1"><text-green>👋 5</text-green>명이 신청하셨습니다</h6>
