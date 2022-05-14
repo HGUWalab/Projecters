@@ -27,13 +27,15 @@
 	<beans:bean id="LoginCheckInterceptor" class="com.walab.Projecters.Interceptor.LoginCheckInterceptor">
 	</beans:bean>
 
-	<!-- <interceptors> 
+	<interceptors> 
     	<interceptor>
-    		<mapping path="mypage/*"/>
-        	<mapping path="/post/createpost"/>
+    		<mapping path="/mypage/*"/>
+    		<mapping path="/form/*"/>
+    		<mapping path="/ddib/*"/>
+        	<mapping path="/post/*"/>
         	<beans:ref bean="LoginCheckInterceptor" />
     	</interceptor>
-	</interceptors> -->
+	</interceptors>
 	
 	<context:component-scan base-package="com.walab.Projecters" />
 	

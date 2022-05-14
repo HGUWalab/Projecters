@@ -9,8 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TEAMPLEIN</title>
-    <link href="../resources/css/styles.css" rel="stylesheet" />
-    <link href="../resources/css/project.css" rel="stylesheet" />
+    <link href="../resources/css/styles.css?ver=1" rel="stylesheet" />
+    <link href="../resources/css/project.css?ver=1" rel="stylesheet" />
 </head>
 
 <body id="page-top">

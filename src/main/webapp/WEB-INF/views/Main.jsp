@@ -19,15 +19,15 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="../resources/css/main.css" rel="stylesheet" />
-        <link href="../resources/css/styles.css" rel="stylesheet" />
+        <link href="../resources/css/main.css?ver=1" rel="stylesheet" />
+        <link href="../resources/css/styles.css?ver=1" rel="stylesheet" />
 </head>
      <body id="page-top">
         <!-- Navigation-->
         <nav class="sb-topnav navbar navbar-expand justify-content-between">
             <!-- Navbar Brand-->
             <a class="navbar-brand" onclick="location.href='${pageContext.request.contextPath}/main/mainpage'"><img src="../resources/img/logo.png"></a>
-            <a class="nav-link" href="mypage1.html">
+            <a class="nav-link" href="${pageContext.request.contextPath}/mypage/mypage1">
                 <h3>Mypage</h3>
             </a>
         </nav>

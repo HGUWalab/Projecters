@@ -18,7 +18,7 @@
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-0 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Brand-->
-            <a class="navbar-brand" href="index.html"><img src="../resources/img/logo.png"></a>
+            <a class="navbar-brand" href="${pageContext.request.contextPath}/main/mainpage"><img src="../resources/img/logo.png"></a>
             
             <!-- Navbar Search-->
             
