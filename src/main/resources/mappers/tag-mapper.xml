@@ -1,3 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="Tag"></mapper>
+<mapper namespace="Tag">
+	
+	<insert id="insertTag">
+		INSERT INTO	projectwaco.Tag(post_id, tag_name) 
+		VALUES
+		(#{post_id}, #{tag_name})
+	</insert>
+	
+	<select id="getTag" resultType="com.walab.Projecters.Bean.Tag">
+		SELECT post_id, tag_name
+		FROM projectwaco.Tag
+		WHERE post_id = #{post_id}
+	</select>
+	
+	
+</mapper>

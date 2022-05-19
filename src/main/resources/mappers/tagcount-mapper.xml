@@ -1,3 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="TagCount"></mapper>
+<mapper namespace="TagCount">
+
+	<insert id="insertTagcount">
+		INSERT INTO projectwaco.Tagcount(count, tag_name)
+		VALUES(1, #{tag_name})
+	</insert>
+	
+	<select id="getTagcount" resultType="int">
+		SELECT EXISTS (SELECT * FROM projectwaco.Tagcount where tag_name = #{tag_name}) as success;
+	</select>
+	
+	<update id="updateTagcount">
+		UPDATE projectwaco.Tagcount 
+		SET count= Tagcount.count+1 
+		WHERE tag_name = #{tag_name} 
+	</update>
+	
+</mapper>
