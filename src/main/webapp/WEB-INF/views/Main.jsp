@@ -51,6 +51,15 @@
                     <h3>지금 인기있는 프로젝트 태그 TOP10 👋</h3>
                     <button class="actionButton" type="button" onclick="location.href='${pageContext.request.contextPath}/post/projectform'">팀원 모집 글쓰기</button>
                 </div>
+               <div class="mainTags">
+               		<div class="tag">
+               			<h5><text-primary>React<text-primary></h5>
+               		</div>
+               		<div class="tag">
+               			<h5><text-primary> Spring Boot<text-primary></h5>
+               		</div>
+               </div>
+               
             </div>
             
         </header>

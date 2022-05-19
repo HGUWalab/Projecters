@@ -11398,4 +11398,30 @@ html {
 
 a {text-decoration: none !important;}
 
+.mainTags{
+	box-sizing: border-box;
+
+	/* Auto layout */
+	
+	display: flex;
+	flex-direction: row;	
+	
+	
+}
+
+.tag{
+	/* justify-content: center; */
+	align-items: center;
+	padding: 8px 24px;
+	height: 36px;
+	
+	/* secondary */
+	
+	background: #E3E0FF;
+	/* secondary */
+	
+	border: 1px solid #E3E0FF;
+	border-radius: 8px;
+	margin-right: 16px;
+}
 

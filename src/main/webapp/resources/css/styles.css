@@ -23,6 +23,16 @@ font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, '
   --b-tnfkr: #EBFCD9;
 }
 
+text-green{
+    color: #32A120;
+}
+text-primary{
+    color: #6F56F4;
+}
+text-red{
+    color: #C04040;
+}
+
 *,
 *::before,
 *::after {
