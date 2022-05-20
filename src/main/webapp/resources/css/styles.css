@@ -15,7 +15,7 @@ font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, '
   --300: #F1F1F1;
   --200: #F9F9F9;
   --100: #FBFBFD;
-  --primary: #6734DB;
+  --primary: #6F56F4;
   --secondary: #E3E0FF;
   --rrjwjf:#C04040;
   --b-rjwjf: #F9DDDD;
@@ -3007,33 +3007,33 @@ textarea.form-control-lg {
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #0d6efd;
-  border-color: #0d6efd;
+  color: var(--700);
+  background-color: var(--secondary);
+  border-color: var(--secondary);
 }
 .btn-primary:hover {
   color: #fff;
-  background-color: #0b5ed7;
-  border-color: #0a58ca;
+  background-color: var(--primary);
+  border-color: var(--primary);
 }
 .btn-check:focus + .btn-primary, .btn-primary:focus {
   color: #fff;
-  background-color: #0b5ed7;
-  border-color: #0a58ca;
+  background-color:var(--primary);
+  border-color:var(--primary);
   box-shadow: 0 0 0 0.25rem rgba(49, 132, 253, 0.5);
 }
 .btn-check:checked + .btn-primary, .btn-check:active + .btn-primary, .btn-primary:active, .btn-primary.active, .show > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: #0a58ca;
-  border-color: #0a53be;
+  background-color:var(--primary);
+  border-color:var(--primary);
 }
 .btn-check:checked + .btn-primary:focus, .btn-check:active + .btn-primary:focus, .btn-primary:active:focus, .btn-primary.active:focus, .show > .btn-primary.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.25rem rgba(49, 132, 253, 0.5);
 }
 .btn-primary:disabled, .btn-primary.disabled {
   color: #fff;
-  background-color: #0d6efd;
-  border-color: #0d6efd;
+  background-color:var(--primary);
+  border-color: var(--primary);
 }
 
 .btn-secondary {
@@ -3935,7 +3935,8 @@ textarea.form-control-lg {
   white-space: nowrap;
 }
 .navbar-brand img{
-  width: 228px;
+  width: 148px;
+
 }
 .navbar-nav {
   display: flex;
@@ -11342,6 +11343,7 @@ letter-spacing: 0.05em;
 font-weight: 700;
 font-size: 36px;
 line-height: 43px;
+color: var(--primary);
 }
 
 .b1{
@@ -11350,6 +11352,7 @@ line-height: 43px;
   font-size: 20px;
   line-height: 30px;
   margin: 0;
+  
 }
 
 .b2{
@@ -11359,6 +11362,7 @@ line-height: 43px;
   line-height: 24px;
   letter-spacing: 0.03em;
   margin: 0;
+  color: var(--900);
 }
 
 h1{
