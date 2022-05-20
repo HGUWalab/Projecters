@@ -1,5 +1,7 @@
 package com.walab.Projecters.Controller;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -55,46 +57,20 @@ public class PostController {
 		post.setWriter_id(user.getUser_id());//writer_id 받아오는
 		post.setTitle(request.getParameter("title"));
 		post.setContent(request.getParameter("content"));
-		postService.insertPost(post);
+		post.setPicture(request.getParameter("picture"));
+		int post_id = postService.insertPost(post);
 		
+		System.out.println("==> addPost() in PostController: Saved data with post_id " + post_id + "Added Tag, too!");
 		
-//		String tagName = request.getParameter("tag_name"); // 어떤 형태로 받아올 것인가? 
-//		String picture = request.getParameter("picture");
-		
-		//System.out.println(postTitle);
-		//System.out.println(tagName);
-		
-//		// 태그 이름 parsing 
-//		if(tagName != null) {
-//			String[] taglist = tagName.split(",");
-//			for(String t : taglist) {
-//				tag.setTag_name(t);
-//				//tagService
-//			}
-//			
-//		}
-		// post 객체 정보 초기화  
-		//post.setWriter_id(Integer.parseInt(writerId)); 		
-		// post 테이블에 title과 content 추가 
-// 		int postId = postService.insertPost(post);
- 		//postService.getPost(Integer.parseInt(writerId));
-		
- 		//post_id 받아와서 tag 테이블에 넣기 
- 		// tag 테이블에 tag 추가 
-// 		
-// 		tag.setPost_id(postId);
-// 		tagService.insertTag(tag);
- 		
- 		//tagcount 테이블에 tagcount 추가 
-// 		int tCount = tagCountService.getTagcount(tagName);
-// 		if(tCount > 0)
-// 			tagCountService.updateTagcount(tagName);
-// 		else
-// 			tagCountService.insertTagcount(tagName);
- 				
-		System.out.println("==> addPost() in PostController: save data to DB");
+		String tags[] = request.getParameter("tag").split(",");
+		Tag tag = new Tag();
+		tag.setPost_id(post_id);
+		for (int i = 0; i < tags.length; i++) {
+			tag.setTag_name(tags[i]);
+			tagService.insertTag(tag);
+		}
+				
 		return "redirect:/main/mainpage";
-	
 	}
 
 //	@RequestMapping(value = "/post", method = RequestMethod.GET)
