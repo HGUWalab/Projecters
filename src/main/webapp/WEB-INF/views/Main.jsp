@@ -34,7 +34,7 @@
      	<header class="masthead  text-black text-center">
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar mb-5" src="assets/img/main.png"  alt="..." />
+                <img class="masthead-avatar mb-5" src="../resources/img/main.png"  alt="..." />
                 <!-- Masthead Heading-->
                 <h1 class="t1 masthead-heading mb-0">당신에게 맞는 팀을 찾으세요</h1>
               
@@ -51,7 +51,7 @@
             </div>
             <div class="tagtitle btn-toolbar  justify-content-between">
                 <h3>지금 인기있는 프로젝트 태그 TOP10 👋</h3>
-                <button class="actionButton" type="button" onclick="location.href='addPost.html' ">팀원 모집 글쓰기</button>
+                <button class="actionButton" type="button" onclick="location.href='${pageContext.request.contextPath}/post/projectform'">팀원 모집 글쓰기</button>
             </div>
             <div class="mainTags">
                 <div class="tag">
