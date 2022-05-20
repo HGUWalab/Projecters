@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.walab.Projecters.Bean.Post;
 import com.walab.Projecters.Bean.User;
 import com.walab.Projecters.Bean.Tag;
+import com.walab.Projecters.Service.BannerService;
 import com.walab.Projecters.Service.PostServiceImpl;
 import com.walab.Projecters.Service.TagCountServiceImpl;
 import com.walab.Projecters.Service.TagServiceImpl;
@@ -33,6 +34,8 @@ public class PostController {
 	TagServiceImpl tagService;
 	@Autowired
 	TagCountServiceImpl tagCountService;
+	@Autowired
+	BannerService bannerService;
 	
 	@RequestMapping(value = "/projectform", method = RequestMethod.GET)
 	public String post() {
@@ -42,9 +45,6 @@ public class PostController {
 	
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	public String addPost(HttpServletRequest request) {
-//		Tag tag = new Tag();
-//		TagCount tagcount = new TagCount();
-		
 		// Post Bean에 데이터 추가 후 DB에 올리는 방법
 		Post post = new Post();
 		HttpSession session = request.getSession();
@@ -54,6 +54,7 @@ public class PostController {
 		post.setContent(request.getParameter("content"));
 		post.setPicture(request.getParameter("picture"));
 		int post_id = postService.insertPost(post);
+		bannerService.updateRecruitingTeam();
 		
 		System.out.println("==> addPost() in PostController: Saved data with post_id " + post_id + "Added Tag, too!");
 		

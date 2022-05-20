@@ -31,8 +31,7 @@
                 <h3>Mypage</h3>
             </a>
         </nav>
-        <!-- Masthead-->
-        <header class="masthead  text-black text-center">
+     	<header class="masthead  text-black text-center">
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image-->
                 <img class="masthead-avatar mb-5" src="../resources/img/main.png"  alt="..." />
@@ -43,24 +42,75 @@
                 <p class="b1 mb-0">기획, 디자인, 개발 어떤 경험이든 팀플in에 있습니다. </p>
                 <form class="d-md-inline-block mt-5 mb-5">
                     <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                        <input class="form-control" type="text" placeholder="Search for..." aria-label="ex) React, Figma ..." aria-describedby="btnNavbarSearch" />
                         <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
                     </div>
                 </form>
-                <div class="tagtitle btn-toolbar justify-content-between">
-                    <h3>지금 인기있는 프로젝트 태그 TOP10 👋</h3>
-                    <button class="actionButton" type="button" onclick="location.href='${pageContext.request.contextPath}/post/projectform'">팀원 모집 글쓰기</button>
-                </div>
-               <div class="mainTags">
-               		<div class="tag">
-               			<h5><text-primary>React<text-primary></h5>
-               		</div>
-               		<div class="tag">
-               			<h5><text-primary> Spring Boot<text-primary></h5>
-               		</div>
-               </div>
-               
+
+              
             </div>
+            <div class="tagtitle btn-toolbar  justify-content-between">
+                <h3>지금 인기있는 프로젝트 태그 TOP10 👋</h3>
+                <button class="actionButton" type="button" onclick="location.href='${pageContext.request.contextPath}/post/projectform'">팀원 모집 글쓰기</button>
+            </div>
+            <div class="mainTags">
+                <div class="tag">
+                    <h5><text-primary>React<text-primary></h5>
+                </div>
+                <div class="tag">
+                    <h5><text-primary> Spring Boot<text-primary></h5>
+                </div>
+                <div class="tag">
+                    <h5><text-primary>React<text-primary></h5>
+                </div>
+                <div class="tag">
+                    <h5><text-primary> Spring Boot<text-primary></h5>
+                </div>
+                <div class="tag">
+                    <h5><text-primary>React<text-primary></h5>
+                </div>
+                <div class="tag">
+                    <h5><text-primary> Spring Boot<text-primary></h5>
+                </div>
+                <div class="tag">
+                    <h5><text-primary>React<text-primary></h5>
+                </div>
+                <div class="tag">
+                    <h5><text-primary> Spring Boot<text-primary></h5>
+                </div>
+                <div class="tag">
+                    <h5><text-primary>React<text-primary></h5>
+                </div>
+                <div class="tag">
+                    <h5><text-primary> Spring Boot<text-primary></h5>
+                </div>
+            </div>
+            <div class="mainContent">
+                <div class="totalState ">
+                    <h6 class="b1">현재 <b>팀플인</b>에서 </h6>
+                    <h6 class="p1">${postCount}</h6>
+                    <h6 class="b1">개의 프로젝트에서 팀원을 모집중이며 </h6>
+                    <h6 class="p1">${recruiting}</h6>
+                    <h6 class="b1">팀이 성사되었습니다. </h6>
+                </div>
+                <div class="toggleButton">
+                    <h4>모집중인 프로젝트만 보기</h4>
+                    <input type="checkbox" id="switch" /><label for="switch">Toggle</label>
+                </div>
+                
+                
+                <div class="projectCards">
+                     <c:forEach var="pList" items="${postList}">
+               			<div>${pList.tag_name}</div><br>
+               			<div>${pList.picture}</div>
+               			<div>${pList.title}</div><br>
+               			<div>${pList.form_count}</div><br>			
+               		</c:forEach>	
+                </div>
+            </div>
+        </div>
+                
+  
             
         </header>
         </body>

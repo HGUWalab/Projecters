@@ -8,7 +8,7 @@
 		(#{post_id}, #{tag_name})
 	</insert>
 	
-	<select id="getTag" resultType="com.walab.Projecters.Bean.Tag">
+	 <select id="getTag" resultType="com.walab.Projecters.Bean.Tag">
 		SELECT post_id, tag_name
 		FROM projectwaco.Tag
 		WHERE post_id = #{post_id}

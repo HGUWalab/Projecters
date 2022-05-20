@@ -13,5 +13,7 @@ public interface PostService {
 	
 	public Post getPost(int id);
 	
+	public int getPostCount();
+	
 	public List<Post> getAllPost();
 }

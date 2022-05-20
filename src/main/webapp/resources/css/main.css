@@ -3953,7 +3953,7 @@ textarea.form-control-lg {
   white-space: nowrap;
 }
 .navbar-brand img{
-  width: 228px;
+  width: 148px;
 }
 .navbar-nav {
   display: flex;
@@ -11245,7 +11245,7 @@ html {
 }
 
 #mainNav {
-  padding-top: 1rem;
+  padding-top: 0rem;
   padding-bottom: 1rem;
   font-weight: 700;
 }
@@ -11321,7 +11321,7 @@ html {
 }
 
 .masthead {
-  padding-top: 1rem;
+  padding-top: 0rem;
   padding-bottom: 6rem;
 }
 .masthead .masthead-heading {
@@ -11336,7 +11336,6 @@ html {
 
 @media (min-width: 992px) {
   .masthead {
-    padding-top: 1rem;
     padding-bottom: 6rem;
   }
   .masthead .masthead-heading {
@@ -11398,20 +11397,29 @@ html {
 
 a {text-decoration: none !important;}
 
-.mainTags{
-	box-sizing: border-box;
+.tagtitle{
+  margin: 0 auto;
+}
+.tagtitle h3{
+  margin: auto 0;
+}
 
+.mainTags{
+  width: 90%;
+	box-sizing: border-box;
+  margin: 0 auto;
+  
 	/* Auto layout */
-	
+	margin-top: 24px;
 	display: flex;
+  align-items: flex-start !important;
 	flex-direction: row;	
-	
-	
+
 }
 
 .tag{
 	/* justify-content: center; */
-	align-items: center;
+  align-items: flex-start !important;
 	padding: 8px 24px;
 	height: 36px;
 	
@@ -11423,5 +11431,79 @@ a {text-decoration: none !important;}
 	border: 1px solid #E3E0FF;
 	border-radius: 8px;
 	margin-right: 16px;
+}
+
+
+.mainContent{
+  margin: 0 auto;
+}
+
+.toggleButton{
+  display: flex;
+
+}
+.toggleButton h4{
+  margin: auto 10px;
+}
+
+/* 토글버튼 */
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 50px;
+	height: 30px;
+	background: var(--secondary);
+	display: block;
+	border-radius: 100px;
+	position: relative;
+}
+
+label:after {
+	content: '';
+	position: absolute;
+	top: 2.5px;
+	left: 2.5px;
+	width: 25px;
+	height: 25px;
+	background: #fff;
+	border-radius: 15px;
+	transition: 0.3s;
+}
+
+input:checked + label {
+	background: var(--primary);
+}
+
+input:checked + label:after {
+	left: calc(100% - 2.5px);
+	transform: translateX(-100%);
+}
+
+label:active:after {
+	width: 25px;
+}
+
+
+.totalState{
+  margin: 70px auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+}
+
+.totalState .p1{
+  margin: 4px 4px -2px 7px;
+}
+
+.toggleButton{
+  width: 90%;
+  justify-content: flex-end;
 }
 
