@@ -1,23 +1,18 @@
 package com.walab.Projecters.Controller;
 
-import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.walab.Projecters.Bean.Post;
 import com.walab.Projecters.Bean.User;
 import com.walab.Projecters.Bean.Tag;
-import com.walab.Projecters.Bean.TagCount;
 import com.walab.Projecters.Service.PostServiceImpl;
-import com.walab.Projecters.Service.TagCountService;
 import com.walab.Projecters.Service.TagCountServiceImpl;
 import com.walab.Projecters.Service.TagServiceImpl;
 
@@ -72,13 +67,4 @@ public class PostController {
 				
 		return "redirect:/main/mainpage";
 	}
-
-//	@RequestMapping(value = "/post", method = RequestMethod.GET)
-//	public ModelAndView post(Model model) {
-//		
-//		ModelAndView mv = new ModelAndView();
-//		System.out.println("post loaded");
-//		// return ;
-//	}
-		
 }
