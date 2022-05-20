@@ -10,4 +10,15 @@ public class BannerServiceImpl implements BannerService {
 
 	@Autowired
 	BannerDAO bannerDAO;
+
+	public int updateRecruitingTeam() {
+		int result = bannerDAO.updateRecruitingTeam();
+		return result;
+	}
+	
+	public int getRecruitingTeam() {
+		int result = bannerDAO.getRecruitingTeam();
+		return result;
+	}
+	
 }

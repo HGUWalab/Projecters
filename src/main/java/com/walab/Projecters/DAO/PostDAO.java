@@ -26,4 +26,8 @@ public class PostDAO {
 		List<Post> postList = sqlSession.selectList("Post.getAllPost");
 		return postList;
 	}
+	public int getPostCount() {
+		int count = sqlSession.selectOne("Post.getPostCount");
+		return count;
+	}
 }

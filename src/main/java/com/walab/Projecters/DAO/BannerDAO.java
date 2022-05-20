@@ -8,4 +8,16 @@ import org.springframework.stereotype.Repository;
 public class BannerDAO {
 	@Autowired
 	SqlSessionTemplate sqlSession;
+	
+	public int updateRecruitingTeam() {
+		int result = sqlSession.update("Banner.updateRecruitingTeam");
+		return result;
+	}
+	
+	public int getRecruitingTeam() {
+		int num = sqlSession.selectOne("Banner.getRecruitingTeam");
+		return num;
+	}
+	
+	
 }

@@ -58,6 +58,15 @@
                		<div class="tag">
                			<h5><text-primary> Spring Boot<text-primary></h5>
                		</div>
+               		<div>${postCount}</div>
+               		<div>${recruiting}</div>
+               		<c:forEach var="pList" items="${postList}">
+               			<div>${pList.tag_name}</div><br>
+               			<div>${pList.picture}</div>
+               			<div>${pList.title}</div><br>
+               			<div>${pList.form_count}</div><br>			
+               		</c:forEach>	
+               		
                </div>
                
             </div>

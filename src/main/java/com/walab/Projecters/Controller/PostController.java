@@ -14,6 +14,7 @@ import com.walab.Projecters.Bean.Post;
 import com.walab.Projecters.Bean.User;
 import com.walab.Projecters.Bean.Tag;
 import com.walab.Projecters.Bean.TagCount;
+import com.walab.Projecters.Service.BannerService;
 import com.walab.Projecters.Service.PostServiceImpl;
 import com.walab.Projecters.Service.TagCountService;
 import com.walab.Projecters.Service.TagCountServiceImpl;
@@ -36,6 +37,8 @@ public class PostController {
 	TagServiceImpl tagService;
 	@Autowired
 	TagCountServiceImpl tagCountService;
+	@Autowired
+	BannerService bannerService;
 	
 	@RequestMapping(value = "/projectform", method = RequestMethod.GET)
 	public String post() {
@@ -56,7 +59,8 @@ public class PostController {
 		post.setTitle(request.getParameter("title"));
 		post.setContent(request.getParameter("content"));
 		postService.insertPost(post);
-		
+		bannerService.updateRecruitingTeam();
+			
 		
 //		String tagName = request.getParameter("tag_name"); // 어떤 형태로 받아올 것인가? 
 //		String picture = request.getParameter("picture");
