@@ -46,44 +46,17 @@
                         <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
                     </div>
                 </form>
-
-              
             </div>
             <div class="tagtitle btn-toolbar  justify-content-between">
                 <h3>지금 인기있는 프로젝트 태그 TOP10 👋</h3>
                 <button class="actionButton" type="button" onclick="location.href='${pageContext.request.contextPath}/post/projectform'">팀원 모집 글쓰기</button>
             </div>
             <div class="mainTags">
+            	<c:forEach  var="llist" items="${list2}">
                 <div class="tag">
-                    <h5><text-primary>React<text-primary></h5>
-                </div>
-                <div class="tag">
-                    <h5><text-primary> Spring Boot<text-primary></h5>
-                </div>
-                <div class="tag">
-                    <h5><text-primary>React<text-primary></h5>
-                </div>
-                <div class="tag">
-                    <h5><text-primary> Spring Boot<text-primary></h5>
-                </div>
-                <div class="tag">
-                    <h5><text-primary>React<text-primary></h5>
-                </div>
-                <div class="tag">
-                    <h5><text-primary> Spring Boot<text-primary></h5>
-                </div>
-                <div class="tag">
-                    <h5><text-primary>React<text-primary></h5>
-                </div>
-                <div class="tag">
-                    <h5><text-primary> Spring Boot<text-primary></h5>
-                </div>
-                <div class="tag">
-                    <h5><text-primary>React<text-primary></h5>
-                </div>
-                <div class="tag">
-                    <h5><text-primary> Spring Boot<text-primary></h5>
-                </div>
+                    <h5><text-primary>${llist}<text-primary></h5>
+                    </div>
+               </c:forEach>	
             </div>
             <div class="mainContent">
                 <div class="totalState ">
@@ -97,20 +70,27 @@
                     <h4>모집중인 프로젝트만 보기</h4>
                     <input type="checkbox" id="switch" /><label for="switch">Toggle</label>
                 </div>
-                
-                
-                <div class="projectCards">
-                     <c:forEach var="pList" items="${postList}">
-               			<div>${pList.tag_name}</div><br>
-               			<div>${pList.picture}</div>
-               			<div>${pList.title}</div><br>
-               			<div>${pList.form_count}</div><br>			
-               		</c:forEach>	
+               <%--  <%
+					List<Post> listProducts = PostDAO.getAllPost();
+				%> --%>
+                <div class="projectCards row " align="center">
+	                
+	  				 	<c:forEach  var="pList" items="${postList}">
+	  				 	<div class="projectCard col-md-4">
+	  				 	 <img class="thumb" src="../resources/img/thumb.jpg">
+	               			<div>${pList.tag_name}</div><br>
+	               			<%-- <div>${pList.picture}</div> --%>
+	               			<h3>${pList.title}</h3><br>
+	               			<h4>👋  신청인원 ${pList.form_count}a명</h4><br>		
+	               			</div>	
+	               		</c:forEach>	
+	         
+					
                 </div>
-            </div>
-        </div>
-                
-  
+           
+			</div>
+   
+   
             
         </header>
         </body>
