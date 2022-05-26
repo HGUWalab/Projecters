@@ -15,6 +15,7 @@ import com.walab.Projecters.Bean.User;
 import com.walab.Projecters.Bean.Tag;
 import com.walab.Projecters.Bean.TagCount;
 import com.walab.Projecters.Service.BannerService;
+import com.walab.Projecters.Service.BannerServiceImpl;
 import com.walab.Projecters.Service.PostServiceImpl;
 import com.walab.Projecters.Service.TagCountService;
 import com.walab.Projecters.Service.TagCountServiceImpl;
@@ -38,7 +39,7 @@ public class PostController {
 	@Autowired
 	TagCountServiceImpl tagCountService;
 	@Autowired
-	BannerService bannerService;
+	BannerServiceImpl bannerService;
 	
 	@RequestMapping(value = "/projectform", method = RequestMethod.GET)
 	public String post() {

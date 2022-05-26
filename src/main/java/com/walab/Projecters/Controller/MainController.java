@@ -33,17 +33,22 @@ public class MainController {
 	@Autowired
 	BannerService bannerService; 
 	
+	
 	@RequestMapping(value = "/mainpage", method = RequestMethod.GET)
 	public ModelAndView main(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView();
 		System.out.println("Main page loaded");
 		List<Post> list;
+		//List<Tag> list2;
 		
 		list = postService.getAllPost();
 		
 		int recruiting = bannerService.getRecruitingTeam();
 		int postCount = postService.getPostCount();
+		//list2 = tagService.getTagList();
 		
+		
+		//mv.addObject("list2", list2);
 		mv.addObject("postCount", postCount);
 		mv.addObject("postList", list);
 		mv.addObject("recruiting", recruiting);
