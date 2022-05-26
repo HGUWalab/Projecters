@@ -15,8 +15,8 @@
 		WHERE writer_id = #{userId}
 	</select>
 	
-	<select id="getPostId" resultType="int">
-		SELECT LAST_INSERT_ID();
+	<select id="getPostId" resultType="int"> 
+		SELECT post_id FROM Post ORDER BY post_id DESC LIMIT 1
 	</select>	
 
 	

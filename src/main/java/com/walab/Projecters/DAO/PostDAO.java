@@ -14,7 +14,7 @@ public class PostDAO {
 	SqlSessionTemplate sqlSession;
 	
 	public int insertPost(Post post) {
-		sqlSession.insert("Post.insertPost", post);
+		int result = sqlSession.insert("Post.insertPost", post);
 		int postID = sqlSession.selectOne("Post.getPostId");
 		return postID;
 	}
