@@ -19,7 +19,7 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="../resources/css/main.css?ver=1" rel="stylesheet" />
+        <link href="../resources/css/main.css?ver=2" rel="stylesheet" />
         <link href="../resources/css/styles.css?ver=1" rel="stylesheet" />
 </head>
      <body id="page-top">
@@ -73,17 +73,22 @@
                <%--  <%
 					List<Post> listProducts = PostDAO.getAllPost();
 				%> --%>
-                <div class="projectCards row " align="center">
+                <div class="projectCards row">
 	                
-	  				 	<c:forEach  var="pList" items="${postList}">
+	  				 <c:forEach  var="pList" items="${postList}">
 	  				 	<div class="projectCard col-md-4">
-	  				 	 <img class="thumb" src="../resources/img/thumb.jpg">
-	               			<div>${pList.tag_name}</div><br>
+	  				 		<img class="thumb" src="../resources/img/thumb.jpg">
+	               			<h5 class="postTag">${pList.tag_name}</h5>
 	               			<%-- <div>${pList.picture}</div> --%>
-	               			<h3>${pList.title}</h3><br>
-	               			<h4>👋  신청인원 ${pList.form_count}a명</h4><br>		
-	               			</div>	
-	               		</c:forEach>	
+	               			<h3>${pList.title}</h3>
+	               			<h4>👋  신청인원 ${pList.form_count}a명</h4>	
+	               			<div class="postButtons"> 
+	               				<button><h5>찜하기</h5></button>
+	               				<button><h5>바로 신청하기</h5></button>
+	               			</div>
+	               			
+	               		</div>	
+	               	</c:forEach>	
 	         
 					
                 </div>
