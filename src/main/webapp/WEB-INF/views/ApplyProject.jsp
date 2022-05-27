@@ -75,7 +75,7 @@
                                         <input id="inputPostId" value="${post_id}" type="hidden" name="post_id" required/>
                                        <div class="mt-4 mb-0">
                                             <div class="d-grid">
-                                            	<a class="btn btn-primary btn-block" onclick="submit()">완료</a>
+                                            	<button class="btn btn-primary btn-block" onclick="submit()">완료</button>
                                             </div>
                                      	 </div>
                                     </form>
