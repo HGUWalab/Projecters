@@ -42,6 +42,7 @@ public class MainController {
 		//List<Tag> list2;
 		
 		list = postService.getAllPost();
+		System.out.println(list);
 		
 		int recruiting = bannerService.getRecruitingTeam();
 		int postCount = postService.getPostCount();

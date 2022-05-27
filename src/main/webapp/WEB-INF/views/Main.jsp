@@ -74,7 +74,6 @@
 					List<Post> listProducts = PostDAO.getAllPost();
 				%> --%>
                 <div class="projectCards row">
-	                
 	  				 <c:forEach  var="pList" items="${postList}">
 	  				 	<div class="projectCard col-md-4">
 	  				 		<img class="thumb" src="../resources/img/thumb.jpg">
@@ -84,19 +83,12 @@
 	               			<h4>👋  신청인원 ${pList.form_count}a명</h4>	
 	               			<div class="postButtons"> 
 	               				<button><h5>찜하기</h5></button>
-	               				<button><h5>바로 신청하기</h5></button>
+	               				<button  onclick="location.href='${pageContext.request.contextPath}/form/postform/${pList.post_id}'"><h5>바로 신청하기</h5></button>
 	               			</div>
-	               			
 	               		</div>	
-	               	</c:forEach>	
-	         
-					
-                </div>
-           
+	               	</c:forEach>					
+                </div>          
 			</div>
-   
-   
-            
         </header>
         </body>
 </html>
