@@ -18,7 +18,6 @@
 	<select id="getPostId" resultType="int"> 
 		SELECT post_id FROM Post ORDER BY post_id DESC LIMIT 1
 	</select>	
-
 	
 	<select id="getAllPost" resultType="map">
 		SELECT Post.post_id, picture, title, tag_name, form_count

@@ -20,8 +20,8 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         
-        <link href="../resources/css/styles.css?ver=1" rel="stylesheet" />
-        <link href="../resources/css/postform.css?ver=5" rel="stylesheet" />
+        <link href="../resources/css/styles.css?ver=${1}" rel="stylesheet" />
+        <link href="../resources/css/postform.css?ver=${2}" rel="stylesheet" />
         <script>
         function submit(){
         	var title = document.getElementById("inputTitle").value;
