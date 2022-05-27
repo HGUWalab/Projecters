@@ -1,5 +1,7 @@
 package com.walab.Projecters.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,4 +22,8 @@ public class TagServiceImpl implements TagService {
 	public Tag getTag(int id) {
 		return tagDAO.getTag(id);
 	}	
+	@Override 
+	public List<Tag> getTagList() {
+		return tagDAO.getTagList();
+	}
 }

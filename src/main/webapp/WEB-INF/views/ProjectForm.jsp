@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Freelancer - Start Bootstrap Theme</title>
+        <title>TEAMPLEIN</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -21,13 +21,13 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         
         <link href="../resources/css/styles.css?ver=1" rel="stylesheet" />
-        <link href="../resources/css/postform.css?ver=1" rel="stylesheet" />
+        <link href="../resources/css/postform.css?ver=5" rel="stylesheet" />
         <script>
         function submit(){
         	var title = document.getElementById("inputTitle").value;
         	var content = document.getElementById("inputDesc").value;
         	var tag = document.getElementById("tag").value;
-        	var picture = document.getElementById("inputPicture").value;
+        	var picture = document.getElementById("file-ip-1-preview").src;
         	
         	$.ajax({
         		url: "../post/add",
@@ -59,24 +59,39 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-7">
                             <div class="card shadow-lg border-0 rounded-lg mt-5" >
-                                <div class="card-header"><h3 class="text-center font-weight-light my-4">프로젝트 정보 입력</h3></div>
+                                <div class="card-header">
+                                	<h3 class="text-center font-weight-light my-3">프로젝트 인원 모집</h3>
+                                	<h6 class="text-center">프로젝트에 대한 자세한 정보와 어떤 사람과 함께하고 싶은지를 구체적으로 기재한다면 더 만족스러운 팀이 만들어질거에요 😉</h6>
+                                </div>
                                 <div class="card-body">
                                     <form action="${pageContext.request.contextPath}/post/add" type="GET">
                                         <div class="form-floating mb-3">
-                                            <input class="form-control" id="inputTitle" type="text" placeholder="name@example.com" name="title" required/>
-                                            <label for="inputTitle">프로젝트 제목</label>
+                                            <input class="form-control" id="inputTitle" type="text" name="title" required/>
+                                            <label for="inputTitle">프로젝트 제목을 입력하세요</label>
                                        </div>
+                                       
                                        <div class="form-floating mb-3">
-                                            <input class="form-control" id="inputDesc" type="text" placeholder="name@example.com" name="content" required/>
-                                            <label for="inputDesc">프로젝트 상세 설명</label>
+                                            <textarea class="form-control" id="inputDesc" type="text" name="content" required/></textarea>
+                                            <label for="inputDesc">프로젝트에 대한 자세</label>
                                         </div>
                                         <div class="form-floating mb-3">                                      	
-                                        	<input class="form-control" type="text" id="tag" value="" data-role="tagsinput" placeholder="엔터로 태그를 추가하세요." name="tag" />    
+                                        	<input class="form-control" type="text" id="tag" value="" data-role="tagsinput" name="tag" />  
+                                        	<label for="tag">태그 (입력하고 엔터)</label>  
                                         	<ul id="tag-list"></ul>                        
                                     	</div> 
+                                    	
                                         <div class="form-floating mb-3">
-                                            <input class="form-control" id="inputPicture" type="text" placeholder="name@example.com" name="picture" />
-                                            <label for="inputTitle">썸네일</label>
+
+										 <div class="center">
+										  <div class="form-input">
+										    
+										    <label for="file-ip-1">Upload Image</label>
+										    <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);" name="picture"/s>
+											<div class="preview">
+										      <img id="file-ip-1-preview">
+										    </div>	    
+										  </div>
+										</div> 
                                        </div>
                                        <div class="mt-4 mb-0">
                                             <div class="d-grid">
@@ -92,6 +107,16 @@
             </main>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="../resources/js/scripts.js"></script>
+        <script src="../resources/js/scripts.js?ver=2"></script>
+        <script type="text/javascript">
+			  function showPreview(event){
+			  if(event.target.files.length > 0){
+			    var src = URL.createObjectURL(event.target.files[0]);
+			    var preview = document.getElementById("file-ip-1-preview");
+			    preview.src = src;
+			    preview.style.display = "block";
+			  }
+			}
+		</script>
     </body>
 </html>

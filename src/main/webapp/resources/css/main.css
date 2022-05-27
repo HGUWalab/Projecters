@@ -11440,8 +11440,13 @@ a {text-decoration: none !important;}
 
 .toggleButton{
   display: flex;
-
+  width: 90%;
+  justify-content: flex-end;
+  margin-bottom: 33px;
 }
+
+
+
 .toggleButton h4{
   margin: auto 10px;
 }
@@ -11502,8 +11507,81 @@ label:active:after {
   margin: 4px 4px -2px 7px;
 }
 
-.toggleButton{
-  width: 90%;
-  justify-content: flex-end;
+
+
+.projectCard{
+	width: 430px;
+	height: 550px;
+	background: #EAFCD9;
+	box-shadow: 0px 4px 7px #D0D0D0;
+	border-radius: 15px;
 }
 
+.projectCard .thumb{
+	width: 400px;
+	height: 300px;
+}
+
+.projectCard .postTag{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 6px 20px;
+	
+	height: 29px;
+	
+	background: #FBFBFD;
+	box-shadow: 1px 1px 5px 1px rgba(156, 156, 156, 0.25);
+	border-radius: 15px;
+	
+	/* Inside auto layout */
+	
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+}
+
+
+.projectCard .postButtons{
+	display: flex;
+  	align-items: flex-end !important;
+	flex-direction: row;	
+}
+
+.postButtons button{
+	
+	box-sizing: border-box;
+	
+	/* Auto layout */
+	
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 6px 16px;
+	gap: 10px;
+	
+	height: 29px;
+	
+	background: #F9F9F9;
+	border: 1px solid #E3E0FF;
+	border-radius: 5px;
+	
+	/* Inside auto layout */
+	
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+	
+	color: #6F56F4;
+}
+
+.postButtons h5{
+	display: flex;
+	align-items: center;
+	
+	color: #6F56F4;
+	
+
+	}
