@@ -19,8 +19,10 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="../resources/css/main.css?ver=${1}" rel="stylesheet" />
-        <link href="../resources/css/styles.css?ver=${2}" rel="stylesheet" />
+
+        <link href="../resources/css/main.css?ver=3" rel="stylesheet" />
+        <link href="../resources/css/styles.css?ver=1" rel="stylesheet" />
+
 </head>
      <body id="page-top">
         <!-- Navigation-->
@@ -61,10 +63,11 @@
             <div class="mainContent">
                 <div class="totalState ">
                     <h6 class="b1">현재 <b>팀플인</b>에서 </h6>
-                    <h6 class="p1">${postCount}</h6>
-                    <h6 class="b1">개의 프로젝트에서 팀원을 모집중이며 </h6>
                     <h6 class="p1">${recruiting}</h6>
-                    <h6 class="b1">팀이 성사되었습니다. </h6>
+                    <h6 class="b1">명이 프로젝트에 신청하였으며 </h6>
+                    <h6 class="p1">${postCount}</h6>
+                    <h6 class="b1">개의 프로젝트가 팀원을 모집중입니다. </h6>
+                    
                 </div>
                 <div class="toggleButton">
                     <h4>모집중인 프로젝트만 보기</h4>
@@ -76,11 +79,11 @@
                 <div class="projectCards row">
 	  				 <c:forEach  var="pList" items="${postList}">
 	  				 	<div class="projectCard col-md-4">
-	  				 		<img class="thumb" src="../resources/img/thumb.jpg">
+	  				 		<img class="thumb" src="${pList.picture}">
 	               			<h5 class="postTag">${pList.tag_name}</h5>
-	               			<%-- <div>${pList.picture}</div> --%>
+	               			
 	               			<h3>${pList.title}</h3>
-	               			<h4>👋  신청인원 ${pList.form_count}a명</h4>	
+	               			<h4>👋  신청인원 ${pList.form_count}명</h4>	
 	               			<div class="postButtons"> 
 	               				<button><h5>찜하기</h5></button>
 	               				<button  onclick="location.href='${pageContext.request.contextPath}/form/postform/${pList.post_id}'"><h5>바로 신청하기</h5></button>
