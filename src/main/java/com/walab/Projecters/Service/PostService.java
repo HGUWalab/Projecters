@@ -12,8 +12,8 @@ public interface PostService {
 	public int updatePost(Post post);
 	
 	public Post getPost(int id);
+		
+	public List<Post> getAllPost();
 	
 	public int getPostCount();
-	
-	public List<Post> getAllPost();
 }

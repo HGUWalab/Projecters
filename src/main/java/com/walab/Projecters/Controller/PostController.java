@@ -56,7 +56,7 @@ public class PostController {
 		int post_id = postService.insertPost(post);
 		bannerService.updateRecruitingTeam();
 		
-		System.out.println("==> addPost() in PostController: Saved data with post_id " + post_id + "Added Tag, too!");
+		System.out.println("==> addPost() in PostController: Saved data with post_id " + post_id + " Added Tag, too!");
 		
 		String tags[] = request.getParameter("tag").split(",");
 		Tag tag = new Tag();

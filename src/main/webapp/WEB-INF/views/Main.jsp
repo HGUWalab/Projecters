@@ -19,8 +19,8 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="../resources/css/main.css?ver=1" rel="stylesheet" />
-        <link href="../resources/css/styles.css?ver=1" rel="stylesheet" />
+        <link href="../resources/css/main.css?ver=${1}" rel="stylesheet" />
+        <link href="../resources/css/styles.css?ver=${2}" rel="stylesheet" />
 </head>
      <body id="page-top">
         <!-- Navigation-->

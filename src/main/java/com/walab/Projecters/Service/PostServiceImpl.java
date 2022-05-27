@@ -42,8 +42,10 @@ public class PostServiceImpl implements PostService {
 		// TODO Auto-generated method stub
 		return dao.getAllPost();
 	}
+	
 	@Override
 	public int getPostCount() {
 		return dao.getPostCount();
 	}
+
 }
