@@ -6,4 +6,5 @@ public interface TagCountService {
 	public int insertTagcount(String tagname);
 	public int getTagcount(String tagname);
 	public int updateTagcount(String tagname);
+	public int checkTag(String tagName);
 }

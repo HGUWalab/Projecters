@@ -45,14 +45,15 @@ public class MainController {
 		System.out.println(list);
 		
 		int recruiting = bannerService.getRecruitingTeam();
+		int formCount = bannerService.getFormCount();
 		int postCount = postService.getPostCount();
 		//list2 = tagService.getTagList();
 		
 		
 		//mv.addObject("list2", list2);
-		mv.addObject("postCount", postCount);
+		mv.addObject("formCount", formCount);
 		mv.addObject("postList", list);
-		mv.addObject("recruiting", recruiting);
+		mv.addObject("postCount", postCount);
 		mv.setViewName("Main");
 		return mv;
 	}

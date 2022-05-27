@@ -28,6 +28,9 @@ public class TagCountServiceImpl implements TagCountService {
 	public int updateTagcount(String tagname) {
 		return tagCountDAO.updateTagcount(tagname);
 	}
-	
+	@Override
+	public int checkTag(String tagName) {
+		return tagCountDAO.checkTag(tagName);
+	}
 	
 }

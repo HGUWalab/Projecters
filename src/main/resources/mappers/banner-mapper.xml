@@ -9,4 +9,8 @@
 		SELECT recruiting FROM Banner
 	</select>
 	
+	<select id="getFormCount" resultType = "int">
+		SELECT COUNT(form_id) FROM Form;
+	</select>
+	
 </mapper>

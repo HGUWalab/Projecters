@@ -25,4 +25,5 @@ public class TagDAO {
 		List<Tag> list = sqlSession.selectList("Tag.getTagList");
 		return list;
 	}
+	
 }

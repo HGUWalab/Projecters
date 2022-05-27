@@ -21,4 +21,8 @@ public class BannerServiceImpl implements BannerService {
 		return result;
 	}
 	
+	public int getFormCount() {
+		int result = bannerDAO.getFormCount();
+		return result;
+	}
 }
