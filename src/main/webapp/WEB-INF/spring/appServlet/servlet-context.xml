@@ -31,6 +31,7 @@
     	<interceptor>
     		<mapping path="/mypage/*"/>
     		<mapping path="/form/*"/>
+    		<mapping path="/form/postform/*"/>
     		<mapping path="/ddib/*"/>
         	<mapping path="/post/*"/>
         	<beans:ref bean="LoginCheckInterceptor" />
