@@ -1,5 +1,7 @@
 package com.walab.Projecters.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,6 +33,10 @@ public class TagCountServiceImpl implements TagCountService {
 	@Override
 	public int checkTag(String tagName) {
 		return tagCountDAO.checkTag(tagName);
+	}
+	@Override
+	public List<String> getTopTen() {		
+		return tagCountDAO.getTopTen();
 	}
 	
 }

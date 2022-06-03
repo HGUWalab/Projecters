@@ -8,4 +8,8 @@
 		VALUES
 		(#{post_id}, #{writer_id}, #{contact}, #{content}, #{status})
 	</insert>
+	
+	<update id="updateFormCount">
+		UPDATE projectwaco.Post SET form_count = form_count + 1 WHERE post_id = #{post_id}
+	</update>
 </mapper>

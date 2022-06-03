@@ -1,5 +1,7 @@
 package com.walab.Projecters.DAO;
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -25,5 +27,9 @@ public class TagCountDAO {
 	public int checkTag(String tagName) {
 		int result = sqlSession.selectOne("TagCount.checkTag", tagName);
 		return result;
+	}
+	public List<String> getTopTen() {
+		List<String> list = sqlSession.selectList("TagCount.getTopTen");
+		return list;
 	}
 }

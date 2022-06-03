@@ -47,5 +47,11 @@ public class PostServiceImpl implements PostService {
 	public int getPostCount() {
 		return dao.getPostCount();
 	}
+	
+	@Override
+	public int getWriterId(int post_id) {
+		return dao.getWriterId(post_id);
+	}
+	
 
 }
