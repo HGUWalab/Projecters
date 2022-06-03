@@ -51,17 +51,15 @@
             </div>
             <div class="tagtitle btn-toolbar  justify-content-between">
                 <h3>지금 인기있는 프로젝트 태그 TOP10 👋</h3>
-                <c:forTokens var="tag" items="${top10tags}" delims=",[]">
-                	<div class="">${tag}</div>
-                </c:forTokens>
+                
                 <button class="actionButton" type="button" onclick="location.href='${pageContext.request.contextPath}/post/projectform'">팀원 모집 글쓰기</button>
             </div>
             <div class="mainTags">
-            	<c:forEach  var="llist" items="${list2}">
-                <div class="tag">
-                    <h5><text-primary>${llist}<text-primary></h5>
-                    </div>
-               </c:forEach>	
+            	<c:forTokens  var="tag" items="${top10tags}" delims=",[]">
+                	<div class="tag">
+                		<h5><text-primary>${tag}<text-primary></h5>
+                	</div>
+                </c:forTokens>
             </div>
             <div class="mainContent">
                 <div class="totalState ">
