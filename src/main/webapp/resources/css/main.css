@@ -3768,7 +3768,7 @@ textarea.form-control-lg {
 }
 
 .tagtitle{
-    width: 90%;
+    width: 1320px;
 }
 
 .btn-group > .btn:not(:first-child),
@@ -11405,7 +11405,7 @@ a {text-decoration: none !important;}
 }
 
 .mainTags{
-  width: 90%;
+  width: 1320px;
 	box-sizing: border-box;
   margin: 0 auto;
   
