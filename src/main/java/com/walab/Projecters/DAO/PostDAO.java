@@ -30,4 +30,7 @@ public class PostDAO {
 		int count = sqlSession.selectOne("Post.getPostCount");
 		return count;
 	}
+	public int getWriterId(int post_id) {
+		return sqlSession.selectOne("Post.getWriterId", post_id);
+	}
 }

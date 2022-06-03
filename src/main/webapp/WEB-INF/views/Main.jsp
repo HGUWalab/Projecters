@@ -22,7 +22,6 @@
 
         <link href="../resources/css/main.css?ver=3" rel="stylesheet" />
         <link href="../resources/css/styles.css?ver=1" rel="stylesheet" />
-
 </head>
      <body id="page-top">
         <!-- Navigation-->

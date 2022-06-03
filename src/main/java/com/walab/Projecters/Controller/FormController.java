@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.walab.Projecters.Bean.Form;
 import com.walab.Projecters.Bean.User;
 import com.walab.Projecters.Service.FormServiceImpl;
+import com.walab.Projecters.Service.PostServiceImpl;
 
 
 /*
@@ -28,16 +29,27 @@ public class FormController {
 	@Autowired
 	FormServiceImpl formService;
 	
+	@Autowired
+	PostServiceImpl postService;
+	
 	@RequestMapping(value="/postform/{post_id}", method=RequestMethod.GET)
-	public ModelAndView apply(@PathVariable int post_id) {
+	public ModelAndView apply(HttpServletRequest request, @PathVariable int post_id) {
 		ModelAndView mv = new ModelAndView();
+		HttpSession session = request.getSession();
 		
-		mv.addObject("post_id", post_id);
-		mv.setViewName("ApplyProject");
+		int writer_id = postService.getWriterId(post_id);
+		User user = (User) session.getAttribute("login");
 		
-		System.out.println("==> apply() in FormController: open page with post id = " + post_id);
-		
-		return mv;
+		if (user.getUser_id() == writer_id) {
+			System.out.println("==> You cannot apply your project!");
+			mv.setViewName("redirect:/main/mainpage");
+			return mv;
+		}else {
+			mv.addObject("post_id", post_id);
+			mv.setViewName("ApplyProject");
+			System.out.println("==> apply() in FormController: open page with post id = " + post_id);
+			return mv;
+		}
 	}
 	
 	@RequestMapping(value="/apply", method=RequestMethod.GET)
