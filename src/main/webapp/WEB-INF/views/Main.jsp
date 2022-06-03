@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page session="false" %>
 <!DOCTYPE html>
 <html>
@@ -20,7 +21,7 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
 
-        <link href="../resources/css/main.css?ver=3" rel="stylesheet" />
+        <link href="../resources/css/main.css?ver=4" rel="stylesheet" />
         <link href="../resources/css/styles.css?ver=1" rel="stylesheet" />
 
 </head>
@@ -77,11 +78,12 @@
 					List<Post> listProducts = PostDAO.getAllPost();
 				%> --%>
                 <div class="projectCards row">
-	  				 <c:forEach  var="pList" items="${postList}">
+	  				 <c:forEach var="pList" items="${postList}">
 	  				 	<div class="projectCard col-md-4">
 	  				 		<img class="thumb" src="${pList.picture}">
-	               			<h5 class="postTag">${pList.tag_name}</h5>
-	               			
+	  				 		<c:forTokens var="tag" items="${pList.tag_name}" delims=",">
+								<h5 class="postTag">${tag}</h5>
+							</c:forTokens>
 	               			<h3>${pList.title}</h3>
 	               			<h4>👋  신청인원 ${pList.form_count}명</h4>	
 	               			<div class="postButtons"> 
