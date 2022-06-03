@@ -39,7 +39,7 @@
         			"tag": tag,
         			"picture": picture
         		},success: function(data){
-      			  location.href="../main/mainpage";
+      			  location.href="../main/project";
         		}
         	})     	
         }
