@@ -14,10 +14,7 @@
 		WHERE post_id = #{post_id}
 	</select>
 	
-	<select id="getMostTag" resultType= "com.walab.Projecters.Bean.Tag">
-		SELECT tag_name, count(*) as tag_count FROM `Tag` group by tag_name order by tag_count DESC limit 10
-	</select>
 	
-	
+
 	
 </mapper>

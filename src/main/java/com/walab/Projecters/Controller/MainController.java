@@ -16,6 +16,7 @@ import com.walab.Projecters.Bean.Post;
 import com.walab.Projecters.Bean.Tag;
 import com.walab.Projecters.Service.BannerService;
 import com.walab.Projecters.Service.PostService;
+import com.walab.Projecters.Service.TagCountService;
 import com.walab.Projecters.Service.TagService;
 
 /*
@@ -31,6 +32,9 @@ public class MainController {
 	TagService tagService;
 	
 	@Autowired
+	TagCountService tagCountService;
+	
+	@Autowired
 	BannerService bannerService; 
 	
 	
@@ -39,6 +43,7 @@ public class MainController {
 		ModelAndView mv = new ModelAndView();
 		System.out.println("Main page loaded");
 		List<Post> list;
+		List<String> top10tags;
 		//List<Tag> list2;
 		
 		list = postService.getAllPost();
@@ -47,9 +52,14 @@ public class MainController {
 		int recruiting = bannerService.getRecruitingTeam();
 		int formCount = bannerService.getFormCount();
 		int postCount = postService.getPostCount();
+		top10tags =  tagCountService.getTopTen();
 		//list2 = tagService.getTagList();
 		
+		System.out.println("Top 10 tags");
+		for(int i=0; i<top10tags.size(); i++)
+			System.out.println(top10tags);
 		
+		mv.addObject("top10tags", top10tags);
 		//mv.addObject("list2", list2);
 		mv.addObject("formCount", formCount);
 		mv.addObject("postList", list);

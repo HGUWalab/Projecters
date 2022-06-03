@@ -22,4 +22,8 @@
 		WHERE tag_name = #{tag_name}) <!--  궁금  -->
 	</select>
 	
+	<select id="getTopTen" resultType= "String">
+		SELECT tag_name FROM Tagcount ORDER BY Tagcount.count DESC
+	</select>
+	
 </mapper>

@@ -27,5 +27,4 @@ public class TagServiceImpl implements TagService {
 		return tagDAO.getTagList();
 	}
 	
-
 }
