@@ -62,7 +62,7 @@
             <div class="mainContent">
                 <div class="totalState ">
                     <h6 class="b1">현재 <b>팀플인</b>에서 </h6>
-                    <h6 class="p1">${recruiting}</h6>
+                    <h6 class="p1">${formCount}</h6>
                     <h6 class="b1">명이 프로젝트에 신청하였으며 </h6>
                     <h6 class="p1">${postCount}</h6>
                     <h6 class="b1">개의 프로젝트가 팀원을 모집중입니다. </h6>

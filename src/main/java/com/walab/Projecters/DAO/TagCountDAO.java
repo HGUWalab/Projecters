@@ -19,7 +19,11 @@ public class TagCountDAO {
 			return sqlSession.selectOne("TagCount.getTagcount", tagname);
 	}
 	public int updateTagcount(String tagname) {
-		int result = sqlSession.update("TagCount.updateUser", tagname);
+		int result = sqlSession.update("TagCount.updateTagcount", tagname);
+		return result;
+	}
+	public int checkTag(String tagName) {
+		int result = sqlSession.selectOne("TagCount.checkTag", tagName);
 		return result;
 	}
 }

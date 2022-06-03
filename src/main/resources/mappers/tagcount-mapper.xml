@@ -17,4 +17,9 @@
 		WHERE tag_name = #{tag_name} 
 	</update>
 	
+	<select id="checkTag" resultType="int">
+		SELECT EXISTS( SELECT * FROM projectwaco.Tagcount 
+		WHERE tag_name = #{tag_name}) <!--  궁금  -->
+	</select>
+	
 </mapper>

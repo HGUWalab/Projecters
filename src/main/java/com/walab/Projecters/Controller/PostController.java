@@ -50,6 +50,7 @@ public class PostController {
 		Post post = new Post();
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("login");
+		
 		post.setWriter_id(user.getUser_id());//writer_id 받아오는
 		post.setTitle(request.getParameter("title"));
 		post.setContent(request.getParameter("content"));
@@ -57,15 +58,31 @@ public class PostController {
 		int post_id = postService.insertPost(post);
 		bannerService.updateRecruitingTeam();
 		
-		System.out.println("==> addPost() in PostController: Saved data with post_id " + post_id + " Added Tag, too!");
+		//System.out.println("==> addPost() in PostController: Saved data with post_id " + post_id + " Added Tag, too!");
 		
-		String tags[] = request.getParameter("tag").split(",");
+		String tags = request.getParameter("tag");
+		String tagsArr[] = request.getParameter("tag").split(",");
+		
 		Tag tag = new Tag();
+		int result; 
 		tag.setPost_id(post_id);
-		for (int i = 0; i < tags.length; i++) {
-			tag.setTag_name(tags[i]);
-			tagService.insertTag(tag);
-		}
+		
+		tag.setTag_name(tags);
+		tagService.insertTag(tag);
+		for(int i=0; i<tagsArr.length; i++) {
+			result = tagCountService.checkTag(tagsArr[i]);
+			System.out.println(result);
+			// 만약 데이터베이스 내에 존재하면 해당 컬럼 값 + 1  
+			if(result == 1) {
+				// 해당 컬럼의 값 +1 해주는 쿼리 호출
+				System.out.println("기존에 있던 태그 ");
+				tagCountService.updateTagcount(tagsArr[i]);
+			}
+			if(result == 0)
+				// 데이터베이스에 값 추가 
+				tagCountService.insertTagcount(tagsArr[i]);
+		}	
+		
 				
 		return "redirect:/main/mainpage";
 	}

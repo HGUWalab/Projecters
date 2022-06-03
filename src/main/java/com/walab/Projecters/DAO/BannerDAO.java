@@ -19,5 +19,10 @@ public class BannerDAO {
 		return num;
 	}
 	
+	public int getFormCount() {
+		int num = sqlSession.selectOne("Banner.getFormCount");
+		return num;
+	}
+	
 	
 }

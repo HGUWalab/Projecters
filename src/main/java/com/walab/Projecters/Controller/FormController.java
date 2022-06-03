@@ -63,6 +63,7 @@ public class FormController {
 		form.setPost_id(Integer.parseInt(request.getParameter("post_id")));
 		form.setStatus(0); //0:대기중, 1:수락, 2:거절
 		
+		System.out.println(request.getParameter("contact")+request.getParameter("content"));
 		formService.insertForm(form);
 		
 		System.out.println("==> apply() in FormController: applied to the project successfully");
