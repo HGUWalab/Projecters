@@ -80,17 +80,24 @@
                 <div class="projectCards row">
 	  				 <c:forEach var="pList" items="${postList}">
 	  				 	<div class="projectCard col-md-4">
-	  				 		<img class="thumb" src="${pList.picture}">
-	  				 		<c:forTokens var="tag" items="${pList.tag_name}" delims=",">
-								<h5 class="postTag">${tag}</h5>
-							</c:forTokens>
-	               			<h3>${pList.title}</h3>
-	               			<h4>👋  신청인원 ${pList.form_count}명</h4>	
-	               			<div class="postButtons"> 
-	               				<button><h5>찜하기</h5></button>
-	               				<button  onclick="location.href='${pageContext.request.contextPath}/form/postform/${pList.post_id}'"><h5>바로 신청하기</h5></button>
+		  				 	<div class="topInfo">
+		  				 		<img class="thumb" src="${pList.picture}">
+		  				 		<div class="postTags">
+			  				 		<c:forTokens var="tag" items="${pList.tag_name}" delims=",">
+										<h5 class="postTag">${tag}</h5>
+									</c:forTokens>
+								</div>
+		               			<h3>${pList.title}</h3>
+			               	</div>
+	               			<div class="bottomInfo">
+		               			<h4>👋  신청인원 ${pList.form_count}명</h4>	
+		               			<div class="postButtons"> 
+		               				<button><h5>찜하기</h5></button>
+		               				<button  onclick="location.href='${pageContext.request.contextPath}/form/postform/${pList.post_id}'"><h5>바로 신청하기</h5></button>
+		               			</div>
 	               			</div>
 	               		</div>	
+	           
 	               	</c:forEach>					
                 </div>          
 			</div>
