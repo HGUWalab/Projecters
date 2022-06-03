@@ -27,6 +27,10 @@
 	 <select id="getPostCount" resultType="int">
 	 	SELECT count(post_id) FROM Post 
 	 </select>
+	 
+	 <select id="getWriterId" resultType="int">
+	 	SELECT writer_id FROM projectwaco.Post where post_id = #{post_id}
+	 </select>
 	
 	 
 </mapper>

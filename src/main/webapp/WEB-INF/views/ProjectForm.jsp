@@ -3,6 +3,7 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
@@ -72,7 +73,7 @@
                                        
                                        <div class="form-floating mb-3">
                                             <textarea class="form-control" id="inputDesc" type="text" name="content" required/></textarea>
-                                            <label for="inputDesc">프로젝트에 대한 자세</label>
+                                            <label for="inputDesc">상세 설명</label>
                                         </div>
                                         <div class="form-floating mb-3">                                      	
                                         	<input class="form-control" type="text" id="tag" value="" data-role="tagsinput" name="tag" />  
@@ -82,17 +83,17 @@
                                     	
                                         <div class="form-floating mb-3">
 
-										 <div class="center">
-										  <div class="form-input">
-										    
-										    <label for="file-ip-1">Upload Image</label>
-										    <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);" name="picture"/s>
-											<div class="preview">
-										      <img id="file-ip-1-preview">
-										    </div>	    
-										  </div>
-										</div> 
-                                       </div>
+											 <div class="center">
+												  <div class="form-input">
+												    
+													    <label for="file-ip-1">Upload Image</label>
+													    <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);" name="picture"/s>
+														<div class="preview">
+													      <img id="file-ip-1-preview">
+												   		</div>	    
+											  	</div>
+											</div> 
+                                       	</div>
                                        <div class="mt-4 mb-0">
                                             <div class="d-grid">
                                             	<a class="btn btn-primary btn-block" onclick="submit()">완료</a>

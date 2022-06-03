@@ -9,4 +9,8 @@
 		insert into User (email, name) 
 		values (#{email}, #{name})
 	</insert>
+	<select id="getApplies" resultType="map">
+		SELECT post_id
+		FROM projectwaco.Form WHERE writer_id = #{id}
+	</select>
 </mapper>

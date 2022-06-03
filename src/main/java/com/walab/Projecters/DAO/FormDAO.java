@@ -12,6 +12,7 @@ public class FormDAO {
 	SqlSessionTemplate sqlSession;
 
 	public int insertForm(Form form) {
+		sqlSession.update("Form.updateFormCount", form.getPost_id());
 		return sqlSession.insert("Form.insertForm", form);
 	}
 }
