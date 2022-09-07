@@ -23,7 +23,7 @@
 	</select>
 	
 	<select id="getTopTen" resultType= "String">
-		SELECT tag_name FROM Tagcount ORDER BY Tagcount.count DESC
+		SELECT distinct tag_name FROM Tagcount ORDER BY Tagcount.count DESC limit 10;
 	</select>
 	
 </mapper>

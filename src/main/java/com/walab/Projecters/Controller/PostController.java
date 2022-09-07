@@ -1,6 +1,11 @@
 package com.walab.Projecters.Controller;
 
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -8,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.walab.Projecters.Bean.Post;
 import com.walab.Projecters.Bean.User;
@@ -45,7 +51,7 @@ public class PostController {
 	}
 	
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
-	public String addPost(HttpServletRequest request) {
+	public String addPost(HttpServletRequest request, MultipartFile upfile) {
 		// Post Bean에 데이터 추가 후 DB에 올리는 방법
 		Post post = new Post();
 		HttpSession session = request.getSession();
@@ -54,7 +60,36 @@ public class PostController {
 		post.setWriter_id(user.getUser_id());//writer_id 받아오는
 		post.setTitle(request.getParameter("title"));
 		post.setContent(request.getParameter("content"));
-		post.setPicture(request.getParameter("picture"));
+		//post.setPicture(request.getParameter("picture"));
+		//System.out.println("이미지 주소: " + request.getParameter("picture"));
+		
+		if(!upfile.getOriginalFilename().equals("")) {
+			String originName = upfile.getOriginalFilename(); // "flower.png"
+
+	        String currentTime = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date()); // "202201181036"
+			int ranNum = (int)(Math.random() * 90000 + 10000); // 46521 (5자리랜덤값)
+	        String ext = originName.substring(originName.lastIndexOf(".")); // ".png"
+
+	        String changeName = currentTime + ranNum + ext;
+
+	        // 업로드한 파일을 보관할 폴더의 물리적인 경로 알아내어 파일을 changeName의 이름으로 저장
+	        // 물리적인 경로는 세션객체를 먼저 얻어내서 겟리얼패스메소드까지 호출
+	        String savePath = session.getServletContext().getRealPath("/resources/uploadFiles/");
+
+	        try {
+	            upfile.transferTo(new File(savePath + changeName));
+	        } catch ( IOException e) {
+	            e.printStackTrace();
+	        }
+	        
+	        //String changeName = saveFile(upfile, session);
+	        // 세이브파일메소드를 업파일과 세션을 전달해서 호출. 리턴된 것을 체인지네임에 담기
+
+	        // 원본명, 서버업로드된경로를 Board b에 이어서 담기
+	        //b.setOriginName(upfile.getOriginalFilename());
+	        post.setPicture("resources/uploadFiles/" + changeName); // 어떤 경로에 저장되었는지도 같이 담기
+
+		}
 		int post_id = postService.insertPost(post);
 		bannerService.updateRecruitingTeam();
 		
@@ -86,4 +121,9 @@ public class PostController {
 				
 		return "redirect:/main/mainpage";
 	}
+
+//	private String saveFile(MultipartFile upfile, HttpSession session) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 }

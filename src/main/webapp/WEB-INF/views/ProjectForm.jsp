@@ -65,7 +65,7 @@
                                 	<h6 class="text-center">프로젝트에 대한 자세한 정보와 어떤 사람과 함께하고 싶은지를 구체적으로 기재한다면 더 만족스러운 팀이 만들어질거에요 😉</h6>
                                 </div>
                                 <div class="card-body">
-                                    <form action="${pageContext.request.contextPath}/post/add" type="GET">
+                                    <%-- <form action="${pageContext.request.contextPath}/post/add" type="GET">
                                         <div class="form-floating mb-3">
                                             <input class="form-control" id="inputTitle" type="text" name="title" required/>
                                             <label for="inputTitle">프로젝트 제목을 입력하세요</label>
@@ -88,6 +88,7 @@
 												    
 													    <label for="file-ip-1">Upload Image</label>
 													    <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);" name="picture"/s>
+													    
 														<div class="preview">
 													      <img id="file-ip-1-preview">
 												   		</div>	    
@@ -100,7 +101,45 @@
                                             </div>
                                       </div>
                                     </form>
-                                </div>
+--%>                                
+					
+					<form action="${pageContext.request.contextPath}/post/add" method="POST" enctype="multipart/format-data">
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" id="inputTitle" type="text" name="title" required/>
+                                            <label for="inputTitle">프로젝트 제목을 입력하세요</label>
+                                       </div>
+                                       
+                                       <div class="form-floating mb-3">
+                                            <textarea class="form-control" id="inputDesc" type="text" name="content" required/></textarea>
+                                            <label for="inputDesc">상세 설명</label>
+                                        </div>
+                                        <div class="form-floating mb-3">                                      	
+                                        	<input class="form-control" type="text" id="tag" value="" data-role="tagsinput" name="tag" />  
+                                        	<label for="tag">태그 (입력하고 엔터)</label>  
+                                        	<ul id="tag-list"></ul>                        
+                                    	</div> 
+                                    	
+                                        <div class="form-floating mb-3">
+
+											 <div class="center">
+												  <div class="form-input">
+													    <label for="file-ip-1">Upload Image</label>
+													    <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);" name="picture"/s>
+													    
+														<div class="preview">
+													      <img id="file-ip-1-preview">
+												   		</div>	    
+											  	</div>
+											</div> 
+                                       	</div>
+                                       <div class="mt-4 mb-0">
+                                            <div class="d-grid">
+                                            	<a class="btn btn-primary btn-block" onclick="submit()">완료</a>
+                                            </div>
+                                      </div>
+                                    </form>
+					
+							</div>
                             </div>
                         </div>
                     </div>

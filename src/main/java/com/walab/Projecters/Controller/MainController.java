@@ -66,6 +66,8 @@ public class MainController {
 		mv.addObject("postCount", postCount);
 		mv.setViewName("Main");
 		return mv;
+		
+		
 	}
 	
 	@RequestMapping(value = "/project", method = RequestMethod.GET)
