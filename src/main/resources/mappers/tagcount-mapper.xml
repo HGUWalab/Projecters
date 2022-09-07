@@ -23,7 +23,8 @@
 	</select>
 	
 	<select id="getTopTen" resultType= "String">
-		SELECT distinct tag_name FROM Tagcount ORDER BY Tagcount.count DESC limit 10;
+		SELECT distinct tag_name FROM projectwaco.Tagcount ORDER BY Tagcount.count DESC limit 10;
+
 	</select>
 	
 </mapper>

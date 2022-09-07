@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page session="false" %>
 <!DOCTYPE html>
 <html>
@@ -20,7 +21,7 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
 
-        <link href="../resources/css/main.css?ver=3" rel="stylesheet" />
+		<link href="../resources/css/main.css?ver=5" rel="stylesheet" />
         <link href="../resources/css/styles.css?ver=1" rel="stylesheet" />
 </head>
      <body id="page-top">
@@ -50,17 +51,15 @@
             </div>
             <div class="tagtitle btn-toolbar  justify-content-between">
                 <h3>지금 인기있는 프로젝트 태그 TOP10 👋</h3>
-                <c:forTokens var="tag" items="${top10tags}" delims=",[]">
-                	<div class="">${tag}</div>
-                </c:forTokens>
+                
                 <button class="actionButton" type="button" onclick="location.href='${pageContext.request.contextPath}/post/projectform'">팀원 모집 글쓰기</button>
             </div>
             <div class="mainTags">
-            	<c:forEach  var="llist" items="${list2}">
-                <div class="tag">
-                    <h5><text-primary>${llist}<text-primary></h5>
-                    </div>
-               </c:forEach>	
+            	<c:forTokens  var="tag" items="${top10tags}" delims=",[]">
+                	<div class="tag">
+                		<h5><text-primary>${tag}<text-primary></h5>
+                	</div>
+                </c:forTokens>
             </div>
             <div class="mainContent">
                 <div class="totalState ">
@@ -79,18 +78,26 @@
 					List<Post> listProducts = PostDAO.getAllPost();
 				%> --%>
                 <div class="projectCards row">
-	  				 <c:forEach  var="pList" items="${postList}">
+	  				 <c:forEach var="pList" items="${postList}">
 	  				 	<div class="projectCard col-md-4">
-	  				 		<img class="thumb" src="${pList.picture}">
-	               			<h5 class="postTag">${pList.tag_name}</h5>
-	               			
-	               			<h3>${pList.title}</h3>
-	               			<h4>👋  신청인원 ${pList.form_count}명</h4>	
-	               			<div class="postButtons"> 
-	               				<button><h5>찜하기</h5></button>
-	               				<button  onclick="location.href='${pageContext.request.contextPath}/form/postform/${pList.post_id}'"><h5>바로 신청하기</h5></button>
+		  				 	<div class="topInfo">
+		  				 		<img class="thumb" src="${pList.picture}">
+		  				 		<div class="postTags">
+			  				 		<c:forTokens var="tag" items="${pList.tag_name}" delims=",">
+										<h5 class="postTag">${tag}</h5>
+									</c:forTokens>
+								</div>
+		               			<h3>${pList.title}</h3>
+			               	</div>
+	               			<div class="bottomInfo">
+		               			<h4>👋  신청인원 ${pList.form_count}명</h4>	
+		               			<div class="postButtons"> 
+		               				<button><h5>찜하기</h5></button>
+		               				<button  onclick="location.href='${pageContext.request.contextPath}/form/postform/${pList.post_id}'"><h5>바로 신청하기</h5></button>
+		               			</div>
 	               			</div>
 	               		</div>	
+	           
 	               	</c:forEach>					
                 </div>          
 			</div>
