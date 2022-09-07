@@ -21,8 +21,8 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
 
-        <link href="../resources/css/main.css?ver=${5}" rel="stylesheet" />
-        <link href="../resources/css/styles.css?ver=${3}" rel="stylesheet" />
+		<link href="../resources/css/main.css?ver=5" rel="stylesheet" />
+        <link href="../resources/css/styles.css?ver=1" rel="stylesheet" />
 </head>
      <body id="page-top">
         <!-- Navigation-->
