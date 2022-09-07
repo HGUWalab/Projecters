@@ -11,8 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.walab.Projecters.Bean.Form;
+import com.walab.Projecters.Bean.MyPageForm;
 import com.walab.Projecters.Bean.Post;
 import com.walab.Projecters.Bean.User;
+import com.walab.Projecters.Service.FormService;
 import com.walab.Projecters.Service.PostService;
 import com.walab.Projecters.Service.UserServiceImpl;
 
@@ -31,6 +34,9 @@ public class MyPageController {
 	@Autowired 
 	PostService postService;
 	
+	@Autowired
+	FormService formService;
+	
 	@RequestMapping(value = "/mypage1", method = RequestMethod.GET)
 	public ModelAndView mypage1(HttpServletRequest request) {
 		System.out.println("==> mypage1() in MyPageController");
@@ -41,20 +47,20 @@ public class MyPageController {
 		System.out.println(list);
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("Mypage1");
-		mv.addObject(list);
+		mv.addObject("postList",list);
 		return mv;
 	}
 	
 	@RequestMapping(value = "/mypage2", method = RequestMethod.GET)
 	public ModelAndView mypage2(HttpServletRequest request) {
+		System.out.println("==> mypage2() in MyPageController");
 		ModelAndView mv = new ModelAndView();
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("login");
-		
-		List<Post> listPosts = userService.getApplies(user.getUser_id());
-		mv.addObject("listPost", listPosts);
-		mv.setViewName("Mypage2");
-		
+		List<MyPageForm> listForm = formService.getMyPageForms(user.getUser_id());
+		System.out.println(listForm);
+		mv.addObject("formList", listForm);
+		mv.setViewName("Mypage2");	
 		return mv;
 	}
 	
