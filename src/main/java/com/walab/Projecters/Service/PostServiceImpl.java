@@ -53,5 +53,10 @@ public class PostServiceImpl implements PostService {
 		return dao.getWriterId(post_id);
 	}
 	
+	@Override
+	public List<Post> getMyPosts(int id) {
+		// TODO Auto-generated method stub
+		return dao.getMyPosts(id);
+	}
 
 }

@@ -13,11 +13,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.walab.Projecters.Bean.Post;
 import com.walab.Projecters.Bean.User;
+import com.walab.Projecters.Service.PostService;
 import com.walab.Projecters.Service.UserServiceImpl;
 
 
 /*
-* 마이페이지 - 나의프로필, 내가 올린 글, 찜한 프로젝트, 신청한 프로젝트, 모집 마감 팝업
+* 마이페이지 - 나의프로필, 내가 올린 글(mypage1), 신청한 프로젝트(mypage2), 찜한 프로젝트(mypage3), 모집 마감 팝업
 * 담당하는 컨트롤러
 * */
 @Controller
@@ -27,9 +28,21 @@ public class MyPageController {
 	@Autowired
 	UserServiceImpl userService;
 	
+	@Autowired 
+	PostService postService;
+	
 	@RequestMapping(value = "/mypage1", method = RequestMethod.GET)
-	public String mypage1(HttpServletRequest request) {
-		return "Mypage1";
+	public ModelAndView mypage1(HttpServletRequest request) {
+		System.out.println("==> mypage1() in MyPageController");
+		HttpSession session = request.getSession();
+		User user = (User) session.getAttribute("login");
+		List<Post> list;
+		list = postService.getMyPosts(user.getUser_id());
+		System.out.println(list);
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("Mypage1");
+		mv.addObject(list);
+		return mv;
 	}
 	
 	@RequestMapping(value = "/mypage2", method = RequestMethod.GET)

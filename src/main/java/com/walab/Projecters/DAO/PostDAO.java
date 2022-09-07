@@ -33,4 +33,8 @@ public class PostDAO {
 	public int getWriterId(int post_id) {
 		return sqlSession.selectOne("Post.getWriterId", post_id);
 	}
+	public List<Post> getMyPosts(int id){
+		List<Post> postList = sqlSession.selectList("Post.getMyPosts", id);
+		return postList;
+	}
 }
