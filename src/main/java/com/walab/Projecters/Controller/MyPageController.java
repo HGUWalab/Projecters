@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.walab.Projecters.Bean.Form;
+import com.walab.Projecters.Bean.MyPageDdib;
 import com.walab.Projecters.Bean.MyPageForm;
 import com.walab.Projecters.Bean.Post;
 import com.walab.Projecters.Bean.User;
+import com.walab.Projecters.Service.DdibService;
 import com.walab.Projecters.Service.FormService;
 import com.walab.Projecters.Service.PostService;
 import com.walab.Projecters.Service.UserServiceImpl;
@@ -36,6 +38,9 @@ public class MyPageController {
 	
 	@Autowired
 	FormService formService;
+	
+	@Autowired
+	DdibService ddibService;
 	
 	@RequestMapping(value = "/mypage1", method = RequestMethod.GET)
 	public ModelAndView mypage1(HttpServletRequest request) {
@@ -65,7 +70,15 @@ public class MyPageController {
 	}
 	
 	@RequestMapping(value = "/mypage3", method = RequestMethod.GET)
-	public String mypage3() {
-		return "Mypage3";
+	public ModelAndView mypage3(HttpServletRequest request) {
+		System.out.println("==> mypage3() in MyPageController");
+		ModelAndView mv = new ModelAndView();
+		HttpSession session = request.getSession();
+		User user = (User) session.getAttribute("login");
+		List<MyPageDdib> listDdib = ddibService.getMyDdibs(user.getUser_id());
+		System.out.println(listDdib);
+		mv.addObject("ddibList", listDdib);
+		mv.setViewName("Mypage3");	
+		return mv;
 	}
 }
