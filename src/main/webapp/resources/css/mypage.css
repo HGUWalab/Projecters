@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+.profile{
+	width: 250px;
+}
+
+.profile img{
+	width: 125px;
+}
+
+.nav{
+	margin-left: 20px;
+}
