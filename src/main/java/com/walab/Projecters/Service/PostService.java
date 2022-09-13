@@ -18,4 +18,6 @@ public interface PostService {
 	public int getPostCount();
 
 	public int getWriterId(int post_id);
+	
+	public List<Post> getMyPosts(int id);
 }

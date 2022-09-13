@@ -12,4 +12,16 @@
 	<update id="updateFormCount">
 		UPDATE projectwaco.Post SET form_count = form_count + 1 WHERE post_id = #{post_id}
 	</update>
+	
+	<select id="getMyForms" resultType="map">
+		SELECT Post.title, Post.form_count, Post.status as "post_status", Form.form_id, Form.status as "form_status", Form.post_id 
+		FROM Form 
+		LEFT JOIN Post 
+		ON Post.post_id = Form.post_id WHERE Form.writer_id=#{id}
+		UNION 
+		SELECT Post.title, Post.form_count, Post.status as "post_status", Form.form_id, Form.status as "form_status", Form.post_id 
+		FROM Form 
+		RIGHT JOIN Post 
+		ON Post.post_id = Form.post_id WHERE Form.writer_id=#{id}
+	 </select>
 </mapper>
