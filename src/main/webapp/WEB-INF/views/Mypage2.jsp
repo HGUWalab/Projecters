@@ -28,8 +28,8 @@
                     <div class="d-flex sb-sidenav-menu">
                     	<div class="d-flex profile">
                     		<img src="../resources/img/profile.png"  alt="..." >
-                    		<h3>김한동 학부생</h3>
-                    		<h5>22000197@handong.ac.kr</h5>
+                    		<h3>${user.name}</h3>
+                    		<h5>${user.email}</h5>
                     	</div>
                         <div class="nav">
                             <a class="nav-link" href="${pageContext.request.contextPath}/mypage/mypage1">
