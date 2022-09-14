@@ -12,9 +12,14 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
 import org.springframework.web.bind.annotation.RequestParam;
+
+import org.springframework.web.servlet.ModelAndView;
+
 import org.springframework.web.multipart.MultipartFile;
 
 import com.walab.Projecters.Bean.Post;
@@ -107,9 +112,7 @@ public class PostController {
 //		}
 		int post_id = postService.insertPost(post);
 		bannerService.updateRecruitingTeam();
-		
-		//System.out.println("==> addPost() in PostController: Saved data with post_id " + post_id + " Added Tag, too!");
-		
+				
 		String tags = request.getParameter("tag");
 		String tagsArr[] = request.getParameter("tag").split(",");
 		
@@ -132,9 +135,28 @@ public class PostController {
 				// 데이터베이스에 값 추가 
 				tagCountService.insertTagcount(tagsArr[i]);
 		}	
+		System.out.println("==> addPost() in PostController: Saved data with post_id " + post_id + " Added Tag, too!");
+		ModelAndView mv = new ModelAndView();
 		
-				
+		String pTitle = post.getTitle();
+		System.out.println(post.getTitle());
+		mv.addObject("pTitle", pTitle);
+		mv.addObject("post", post);
+		mv.setViewName("Project");
+		
 		return "redirect:/main/mainpage";
+	}
+	
+	/*나중에 게시글 직접적으로 눌렀을때 이동하는 용도*/
+	@RequestMapping(value = "/project/{post_id}", method = RequestMethod.GET)
+	public ModelAndView viewPost(HttpServletRequest request, @PathVariable int post_id) {
+		ModelAndView mv = new ModelAndView();
+		
+		Post post = postService.getPost(post_id);
+		mv.addObject("post", post);
+		mv.setViewName("Project");
+		System.out.println("==>viewPost() in PostController: load data of the post and move to the page");
+		return mv;
 	}
 
 //	private String saveFile(MultipartFile upfile, HttpSession session) {

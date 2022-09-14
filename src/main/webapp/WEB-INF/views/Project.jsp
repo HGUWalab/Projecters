@@ -29,7 +29,8 @@
             <h6 class="b1"><text-green>👋 5</text-green>명이 신청하셨습니다</h6>
           
         </div>
-        <h1 class="projectTitle">김광교수님 랩실에서 함께 공프기하실 개발자를 구합니다. <br>두줄 꽉 채운 제목은 이런 모습이 되겠지요</h1>
+        <h1 class="projectTitle">${post.title}</h1>
+        <h1 class="projectTitle">${pTitle}</h1>
         <h3 class="subTitle"><text-primary>Its related tags are</text-primary></h3>
         <div class="tags">
             <div class="tag"><h5>React</h5></div>
