@@ -74,9 +74,7 @@
                     <h4>모집중인 프로젝트만 보기</h4>
                     <input type="checkbox" id="switch" /><label for="switch">Toggle</label>
                 </div>
-               <%--  <%
-					List<Post> listProducts = PostDAO.getAllPost();
-				%> --%>
+                
                 <div class="projectCards row">
 	  				 <c:forEach var="pList" items="${postList}">
 	  				 	<div class="projectCard col-md-4">
@@ -92,8 +90,8 @@
 	               			<div class="bottomInfo">
 		               			<h4>👋  신청인원 ${pList.form_count}명</h4>	
 		               			<div class="postButtons"> 
-		               				<button><h5>찜하기</h5></button>
-		               				<button  onclick="location.href='${pageContext.request.contextPath}/form/postform/${pList.post_id}'"><h5>바로 신청하기</h5></button>
+		               				<button onclick="location.href='${pageContext.request.contextPath}/ddib/${pList.post_id}'"><h5>찜하기</h5></button>
+		               				<button onclick="location.href='${pageContext.request.contextPath}/form/postform/${pList.post_id}'"><h5>바로 신청하기</h5></button>
 		               			</div>
 	               			</div>
 	               		</div>	

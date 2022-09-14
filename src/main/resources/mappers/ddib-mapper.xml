@@ -14,4 +14,9 @@
 		ON Post.post_id = Ddib.post_id
 		WHERE Ddib.user_id = #{id}
 	 </select>
+	 
+	 <insert id="insertDdib">
+	 	INSERT INTO projectwaco.Ddib(post_id, user_id)
+	 	VALUES (#{post_id}, #{user_id})
+	 </insert>
 </mapper>
