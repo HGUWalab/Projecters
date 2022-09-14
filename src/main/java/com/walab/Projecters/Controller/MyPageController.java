@@ -52,6 +52,7 @@ public class MyPageController {
 		System.out.println(list);
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("Mypage1");
+		mv.addObject("user", user);
 		mv.addObject("postList",list);
 		return mv;
 	}
@@ -65,6 +66,7 @@ public class MyPageController {
 		List<MyPageForm> listForm = formService.getMyPageForms(user.getUser_id());
 		System.out.println(listForm);
 		mv.addObject("formList", listForm);
+		mv.addObject("user", user);
 		mv.setViewName("Mypage2");	
 		return mv;
 	}
@@ -78,6 +80,7 @@ public class MyPageController {
 		List<MyPageDdib> listDdib = ddibService.getMyDdibs(user.getUser_id());
 		System.out.println(listDdib);
 		mv.addObject("ddibList", listDdib);
+		mv.addObject("user", user);
 		mv.setViewName("Mypage3");	
 		return mv;
 	}
