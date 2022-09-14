@@ -10,8 +10,8 @@
         <meta name="author" content="" />
         <title>Projecters</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-        <link href="../resources/css/styles.css" rel="stylesheet" />
-        <link href="../resources/css/mypage.css?ver=2" rel="stylesheet" />
+        <link href="../resources/css/styles.css?ver=1005" rel="stylesheet" />
+        <link href="../resources/css/mypage.css?ver=10552" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
@@ -26,8 +26,8 @@
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordion">
-                    <div class="sb-sidenav-menu">
-                    	<div class="profile">
+                    <div class="d-flex sb-sidenav-menu">
+                    	<div class="d-flex profile">
                     		<img src="../resources/img/profile.png"  alt="..." >
                     		<h3>김한동 학부생</h3>
                     		<h5>22000197@handong.ac.kr</h5>
@@ -36,9 +36,11 @@
                             <a class="nav-link" href="${pageContext.request.contextPath}/mypage/mypage1">
                                 내가 올린 프로젝트 
                             </a>
+                            <hr>
                             <a class="nav-link" href="${pageContext.request.contextPath}/mypage/mypage2">
                                 내가 신청한 프로젝트
                             </a>
+                             <hr>
                             <a class="nav-link" href="${pageContext.request.contextPath}/mypage/mypage3">
                                 내가 찜한 프로젝트
                             </a>
@@ -49,26 +51,27 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">내가 올린 프로젝트</h1>
+                        <h1 class="mypageTabTitle mt-4">내가 올린 프로젝트</h1>
                         <div class="row">
                             <div class="card text-black mb-4">
-                                <div class="card-body">
+                                <div class="d-flex card-body">
                                     <div class="card-info">
                                         <button class="card-status">
-                                            모집중
+                                            <h6 class="state-button">모집중</h6>
                                         </button>
-                                        <a href="#">모집 마감하기</a>
+                                        <a href="#" class="textButton">모집 마감하기</a>
                                     </div>
-                                    📱 Flutter를 이용한 앱 개발 프로젝트
+                                    <h5 class="cardTitle"> 📱 Flutter를 이용한 앱 개발 프로젝트</h5>
+                                   
                                 </div>
-                                <div class="card-footer d-flex align-items-center justify-content-center">
+                                <div class="card-footer d-flex  justify-content-end">
                                     
-                                    <div class="small text-black">👋 현재 신청자 18명</div>
+                                    <div class="applicant small text-black">👋 현재 신청자  <strong> 18명</strong></div>
                                     <div class="card-action">
-                                        <button class="card-update">
+                                        <button class="cardButton">
                                             수정
                                         </button>
-                                        <button class="card-applier">
+                                        <button class="cardButton">
                                             신청자 보기
                                         </button>
                                     </div>
