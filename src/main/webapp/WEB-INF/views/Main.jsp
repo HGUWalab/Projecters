@@ -22,7 +22,7 @@
         <!-- Core theme CSS (includes Bootstrap)-->
 
 		<link href="../resources/css/main.css?ver=5" rel="stylesheet" />
-        <link href="../resources/css/styles.css?ver=1" rel="stylesheet" />
+     	<link href="../resources/css/styles.css?ver=1" rel="stylesheet" />
 </head>
      <body id="page-top">
         <!-- Navigation-->

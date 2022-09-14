@@ -11,6 +11,7 @@
         <title>Projecters</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="../resources/css/styles.css" rel="stylesheet" />
+        <link href="../resources/css/mypage.css?ver=1" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
@@ -39,6 +40,11 @@
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
+                    	<div class="profile">
+                    		<img src="../resources/img/profile.png"  alt="..." >
+                    		<h3>김한동 학부생</h3>
+                    		<h5>22000197@handong.ac.kr</h5>
+                    	</div>
                         <div class="nav">
                             <a class="nav-link" href="${pageContext.request.contextPath}/mypage/mypage1">
                                 내가 올린 프로젝트 
