@@ -37,4 +37,10 @@ public class PostDAO {
 		List<Post> postList = sqlSession.selectList("Post.getMyPosts", id);
 		return postList;
 	}
+	public List<Post> searchPosts(String searchText){
+		searchText = '%'+searchText+'%';
+		List<Post> postList = sqlSession.selectList("Post.searchPosts", searchText);
+		System.out.println("searchPosts = " + postList);
+		return postList;
+	}
 }

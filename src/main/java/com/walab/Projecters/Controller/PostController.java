@@ -159,6 +159,7 @@ public class PostController {
 		return mv;
 	}
 
+
 //	private String saveFile(MultipartFile upfile, HttpSession session) {
 //		// TODO Auto-generated method stub
 //		return null;

@@ -59,4 +59,9 @@ public class PostServiceImpl implements PostService {
 		return dao.getMyPosts(id);
 	}
 
+	@Override
+	public List<Post> searchPosts(String search) {
+		// TODO Auto-generated method stub
+		return dao.searchPosts(search);
+	}
 }

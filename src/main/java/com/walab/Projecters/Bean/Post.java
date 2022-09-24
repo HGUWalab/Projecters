@@ -14,7 +14,6 @@ public class Post {
 	private String filePath;
 //	private long fileSize;
 //	String picture;
-	
 	private int ddib_count;
 	private int form_count;
 	
