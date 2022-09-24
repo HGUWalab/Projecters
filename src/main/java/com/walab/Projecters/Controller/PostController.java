@@ -57,32 +57,33 @@ public class PostController {
 		return "ProjectForm";
 	}
 	
-	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public String addPost(HttpServletRequest request, @RequestParam("picture") MultipartFile picture) {
+	@RequestMapping(value = "/add", method = RequestMethod.GET)
+	public String addPost(HttpServletRequest request) {
 		// Post Bean에 데이터 추가 후 DB에 올리는 방법
+		System.out.println("여긴 왔네");
 		Post post = new Post();
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("login");
-		
+	
 		post.setWriter_id(user.getUser_id());//writer_id 받아오는
 		post.setTitle(request.getParameter("title"));
 		post.setContent(request.getParameter("content"));
-		//post.setPicture(request.getParameter("picture"));
-		//System.out.println("이미지 주소: " + request.getParameter("picture"));
-		
-		String fileRealName = picture.getOriginalFilename();
-		System.out.println(fileRealName);
-		long size = picture.getSize();
-		System.out.println(size);
-		
-		String fileExtension = fileRealName.substring(fileRealName.lastIndexOf("."), fileRealName.length());
-		System.out.println("확장명: " + fileExtension);
-		String  storedFileName = UUID.randomUUID().toString().replaceAll("-", "") + fileExtension;
-		String uploadFolder = request.getSession().getServletContext().getRealPath("/").concat("resources/img/")+ storedFileName;
-		System.out.println("업로드 폴더 :" + uploadFolder);
-		
-		File saveFile = new File(uploadFolder);
-		
+//		post.setPicture(request.getParameter("picture"));
+//		System.out.println("이미지 주소: " + request.getParameter("picture"));
+//		
+//		String fileRealName = picture.getOriginalFilename();
+//		System.out.println(fileRealName);
+//		long size = picture.getSize();
+//		System.out.println(size);
+//		
+//		String fileExtension = fileRealName.substring(fileRealName.lastIndexOf("."), fileRealName.length());
+//		System.out.println("확장명: " + fileExtension);
+//		String  storedFileName = UUID.randomUUID().toString().replaceAll("-", "") + fileExtension;
+//		String uploadFolder = request.getSession().getServletContext().getRealPath("/").concat("resources/img/")+ storedFileName;
+//		System.out.println("업로드 폴더 :" + uploadFolder);
+//		
+//		File saveFile = new File(uploadFolder);
+//		
 //		if(!upfile.getOriginalFilename().equals("")) {
 //			String originName = upfile.getOriginalFilename(); // "flower.png"
 //
