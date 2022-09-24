@@ -3825,6 +3825,7 @@ textarea.form-control-lg {
 }
 
 .nav-link {
+  margin-left: 30px;
   margin-right: 80px;
   display: block;
   color: --900;
@@ -11001,11 +11002,11 @@ body {
   display: flex;
 }
 #layoutSidenav #layoutSidenav_nav {
-  flex-basis: 225px;
+  flex-basis: 330px;
   flex-shrink: 0;
   transition: transform 0.15s ease-in-out;
   z-index: 1038;
-  transform: translateX(-225px);
+  transform: translateX(-330px);
 }
 #layoutSidenav #layoutSidenav_content {
   position: relative;
@@ -11045,10 +11046,10 @@ body {
   }
 
   .sb-sidenav-toggled #layoutSidenav #layoutSidenav_nav {
-    transform: translateX(-225px);
+    transform: translateX(-330px);
   }
   .sb-sidenav-toggled #layoutSidenav #layoutSidenav_content {
-    margin-left: -225px;
+    margin-left: -330px;
   }
   .sb-sidenav-toggled #layoutSidenav #layoutSidenav_content:before {
     display: none;
@@ -11058,7 +11059,7 @@ body {
   z-index: 1039;
 }
 .sb-nav-fixed #layoutSidenav #layoutSidenav_nav {
-  width: 225px;
+  width: 330px;
   height: 100vh;
   z-index: 1038;
 }

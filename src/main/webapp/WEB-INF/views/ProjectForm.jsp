@@ -28,8 +28,8 @@
         	var title = document.getElementById("inputTitle").value;
         	var content = document.getElementById("inputDesc").value;
         	var tag = document.getElementById("tag").value;
-        	var picture = document.getElementById("file-ip-1-preview").src;
-        	
+        	/* var picture = document.getElementById("file-ip-1-preview").src;
+ */        	
         	$.ajax({
         		url: "../post/add",
         		type: 'GET',
@@ -37,7 +37,7 @@
         			"title": title,
         			"content": content,
         			"tag": tag,
-        			"picture": picture
+        		/* 	"picture": picture */
         		},success: function(data){
       			  location.href="../main/project";
         		}
