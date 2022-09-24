@@ -36,4 +36,7 @@
 	 	SELECT * FROM projectwaco.Post where writer_id = #{id}
 	 </select>
 	 
+	 <select id="searchPosts" resultType="map">
+		SELECT * FROM projectwaco.Post WHERE (Post.title LIKE  #{searchText} OR Post.content LIKE  #{searchText})	 
+	</select>
 </mapper>

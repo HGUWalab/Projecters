@@ -21,14 +21,30 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
 
-		<link href="../resources/css/main.css?ver=5" rel="stylesheet" />
-     	<link href="../resources/css/styles.css?ver=1" rel="stylesheet" />
+		<link href="${pageContext.request.contextPath}/resources/css/main.css?ver=5" rel="stylesheet" />
+     	<link href="${pageContext.request.contextPath}/resources/css/styles.css?ver=1" rel="stylesheet" />
 </head>
+<script type="text/javascript" charset="utf-8">
+	sessionStorage.setItem("contextpath", "${pageContext.request.contextPath}");
+</script>
+<script>
+function searchPost() {
+    var search = document.getElementById('searchText').value.trim();
+    var contextPath = sessionStorage.getItem("contextpath");
+    console.log(contextPath);
+    console.log(search);
+    if (search.length > 1) {
+    	location.href = contextPath+"/main/mainpage/" + search;
+      } else {
+        alert('검색어(' + search + ')가 너무 짧습니다.');
+    }
+}
+</script>
      <body id="page-top">
         <!-- Navigation-->
         <nav class="sb-topnav navbar navbar-expand justify-content-between">
             <!-- Navbar Brand-->
-            <a class="navbar-brand" onclick="location.href='${pageContext.request.contextPath}/main/mainpage'"><img src="../resources/img/logo.png"></a>
+            <a class="navbar-brand" onclick="location.href='${pageContext.request.contextPath}/main/mainpage'"><img src="${pageContext.request.contextPath}/resources/img/logo.png"></a>
             <a class="nav-link" href="${pageContext.request.contextPath}/mypage/mypage1">
                 <h3>Mypage</h3>
             </a>
@@ -36,7 +52,7 @@
      	<header class="masthead  text-black text-center">
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar mb-5" src="../resources/img/main.png"  alt="..." />
+                <img class="masthead-avatar mb-5" src="${pageContext.request.contextPath}/resources/img/main.png"  alt="..." />
                 <!-- Masthead Heading-->
                 <h1 class="t1 masthead-heading mb-0">당신에게 맞는 팀을 찾으세요</h1>
               
@@ -44,8 +60,8 @@
                 <p class="b1 mb-0">기획, 디자인, 개발 어떤 경험이든 팀플in에 있습니다. </p>
                 <form class="d-md-inline-block mt-5 mb-5">
                     <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Search for..." aria-label="ex) React, Figma ..." aria-describedby="btnNavbarSearch" />
-                        <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+                        <input class="form-control" id="searchText" onkeyup="if(window.event.keyCode==13){searchPost()}" type="text" placeholder="Search for..." aria-label="ex) React, Figma ..." aria-describedby="btnNavbarSearch" />
+                        <button class="btn btn-primary" id="btnNavbarSearch" type="button" onclick="searchPost()"><i class="fas fa-search"></i></button>
                     </div>
                 </form>
             </div>

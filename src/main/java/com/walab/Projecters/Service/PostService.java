@@ -20,4 +20,6 @@ public interface PostService {
 	public int getWriterId(int post_id);
 	
 	public List<Post> getMyPosts(int id);
+	
+	public List<Post> searchPosts(String search);
 }
