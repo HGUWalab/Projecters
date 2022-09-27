@@ -38,7 +38,12 @@ function searchPost() {
       } else {
         alert('검색어(' + search + ')가 너무 짧습니다.');
     }
+};
+function goDetail(post_id){
+    var contextPath = sessionStorage.getItem("contextpath");
+	location.href = contextPath+"/main/project/"+post_id;
 }
+
 </script>
      <body id="page-top">
         <!-- Navigation-->
@@ -101,7 +106,7 @@ function searchPost() {
 										<h5 class="postTag">${tag}</h5>
 									</c:forTokens>
 								</div>
-		               			<h3>${pList.title}</h3>
+		               			<h3 onclick="goDetail('${pList.post_id}')">${pList.title}</h3>
 			               	</div>
 	               			<div class="bottomInfo">
 		               			<h4>👋  신청인원 ${pList.form_count}명</h4>	

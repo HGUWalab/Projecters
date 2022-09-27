@@ -8,6 +8,9 @@
 		VALUES
 		(#{writer_id}, #{title}, #{content}, #{picture})
 	</insert>
+	<select id="getClickedPost" resultType="com.walab.Projecters.Bean.Post">
+		SELECT * FROM projectwaco.Post WHERE post_id = #{post_id}
+	</select>
  
 	<select id="getPost" resultType="com.walab.Projecters.Bean.Post">
 		SELECT post_id, title, content, status, picture, ddib_count, form_count 

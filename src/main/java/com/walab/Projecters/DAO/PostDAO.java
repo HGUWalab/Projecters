@@ -18,6 +18,10 @@ public class PostDAO {
 		int postID = sqlSession.selectOne("Post.getPostId");
 		return postID;
 	}
+	public Post getClickedPost(int post_id) {
+		Post post = sqlSession.selectOne("Post.getClickedPost", post_id);
+		return post;
+	}
 	public Post getPost(int id) {
 		Post post = sqlSession.selectOne("Post.getPost", id);
 		return post;
