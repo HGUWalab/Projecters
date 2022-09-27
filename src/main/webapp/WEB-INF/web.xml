@@ -23,7 +23,15 @@
 			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
+		<multipart-config>
+			<location>/resources/img/</location>
+			<max-file-size>20971420</max-file-size>
+			<max-request-size>41943040</max-request-size>
+			<file-size-threshold>20971420</file-size-threshold>
+		</multipart-config>
 	</servlet>
+	
+	
 		
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>

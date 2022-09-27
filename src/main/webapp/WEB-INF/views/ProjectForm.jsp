@@ -23,6 +23,7 @@
         
         <link href="../resources/css/styles.css?ver=${1}" rel="stylesheet" />
         <link href="../resources/css/postform.css?ver=${2}" rel="stylesheet" />
+<<<<<<< HEAD
         <script>
         function submit(){
         	var title = document.getElementById("inputTitle").value;
@@ -44,7 +45,7 @@
         	})     	
         }
         </script>
-    </head>
+</head>
     <body id="page-top">
 	<!-- Navigation-->
     <nav class="sb-topnav navbar navbar-expand justify-content-between">
@@ -65,45 +66,9 @@
                                 	<h6 class="text-center">프로젝트에 대한 자세한 정보와 어떤 사람과 함께하고 싶은지를 구체적으로 기재한다면 더 만족스러운 팀이 만들어질거에요 😉</h6>
                                 </div>
                                 <div class="card-body">
-                                    <%-- <form action="${pageContext.request.contextPath}/post/add" type="GET">
-                                        <div class="form-floating mb-3">
-                                            <input class="form-control" id="inputTitle" type="text" name="title" required/>
-                                            <label for="inputTitle">프로젝트 제목을 입력하세요</label>
-                                       </div>
-                                       
-                                       <div class="form-floating mb-3">
-                                            <textarea class="form-control" id="inputDesc" type="text" name="content" required/></textarea>
-                                            <label for="inputDesc">상세 설명</label>
-                                        </div>
-                                        <div class="form-floating mb-3">                                      	
-                                        	<input class="form-control" type="text" id="tag" value="" data-role="tagsinput" name="tag" />  
-                                        	<label for="tag">태그 (입력하고 엔터)</label>  
-                                        	<ul id="tag-list"></ul>                        
-                                    	</div> 
-                                    	
-                                        <div class="form-floating mb-3">
 
-											 <div class="center">
-												  <div class="form-input">
-												    
-													    <label for="file-ip-1">Upload Image</label>
-													    <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);" name="picture"/s>
-													    
-														<div class="preview">
-													      <img id="file-ip-1-preview">
-												   		</div>	    
-											  	</div>
-											</div> 
-                                       	</div>
-                                       <div class="mt-4 mb-0">
-                                            <div class="d-grid">
-                                            	<a class="btn btn-primary btn-block" onclick="submit()">완료</a>
-                                            </div>
-                                      </div>
-                                    </form>
---%>                                
 					
-					<form action="${pageContext.request.contextPath}/post/add" method="POST" enctype="multipart/format-data">
+					<form id="frm" action="${pageContext.request.contextPath}/post/add" method="POST" enctype="multipart/form-data">
                                         <div class="form-floating mb-3">
                                             <input class="form-control" id="inputTitle" type="text" name="title" required/>
                                             <label for="inputTitle">프로젝트 제목을 입력하세요</label>
@@ -134,7 +99,7 @@
                                        	</div> -->
                                        <div class="mt-4 mb-0">
                                             <div class="d-grid">
-                                            	<a class="btn btn-primary btn-block" onclick="submit()">완료</a>
+                                            	<a class="btn btn-primary btn-block" onclick="send()">완료</a>
                                             </div>
                                       </div>
                                     </form>
@@ -148,6 +113,42 @@
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="../resources/js/scripts.js?ver=2"></script>
+        <script>
+        function send(){
+        	/* var title = document.getElementById("inputTitle").value;
+        	var content = document.getElementById("inputDesc").value;
+        	var tag = document.getElementById("tag").value;
+        	var picture = document.getElementById("file-ip-1-preview").src; */
+        	var form = $('#frm')[0];
+        	var data = new FormData(form);
+        	console.log(data);
+ 			
+         	 $.ajax({
+        		url: "../post/add",
+        		/* type: 'GET', */
+        		type: 'POST',
+        		enctype: 'multipart/form-data',
+        		data: data,
+        		dataType: 'json',
+        		processData: false,
+        		contentType: false, 
+        		/*data: {
+        			"title": title,
+        			"content": content,
+        			"tag": tag,
+        		 	"picture": picture
+        		},*/
+        		success: function(data){
+        		console.log(data);
+      			  location.href="../main/project";
+        		}
+      /*   		error: function(e){
+        			console.log("ERROR : ", e);
+        		}
+       */
+        	})       	
+        }
+        </script>
         <script type="text/javascript">
 			  function showPreview(event){
 			  if(event.target.files.length > 0){

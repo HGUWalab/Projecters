@@ -2,6 +2,8 @@ package com.walab.Projecters.Controller;
 
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -22,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import com.walab.Projecters.Bean.Post;
 import com.walab.Projecters.Bean.User;
@@ -39,6 +42,10 @@ import com.walab.Projecters.Service.TagServiceImpl;
 * 프로젝트 신청(프로젝트 글 보는 페이지)
 * 를 담당하는 컨트롤러
 * */
+
+
+
+
 @Controller
 @RequestMapping(value="/post")
 public class PostController {
@@ -60,18 +67,41 @@ public class PostController {
 	
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	public String addPost(HttpServletRequest request) {
-		// Post Bean에 데이터 추가 후 DB에 올리는 방법
 		System.out.println("여긴 왔네");
+		
 		Post post = new Post();
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("login");
-	
+		
+//		byte[] data = picture.getBytes();
+//		String filePath = s.getServletContext().getRealPath("/")
+//				+"resources" + File.separator 
+//				+ "img" + File.separator + picture.getOriginalFilename();
+//		
+//		
+//		String tmpFilePath =s.getServletContext().getRealPath("/"); 
+//		
+// 		
+//		System.out.println("filePath: " + filePath);
+//		try {
+//			FileOutputStream fileout = new FileOutputStream(filePath);
+//			fileout.write(data);
+//			fileout.close();
+//			
+////			post.setPicturePath(dbSave);
+//			post.setPicturePath(picture.getOriginalFilename());
+//		} catch (FileNotFoundException e) {
+//			throw new RuntimeException(e); 
+//		} catch (IOException e){
+//			throw new RuntimeException(e);
+//		}
+
+		
 		post.setWriter_id(user.getUser_id());//writer_id 받아오는
 		post.setTitle(request.getParameter("title"));
 		post.setContent(request.getParameter("content"));
-		
 		post.setPicture(request.getParameter("picture"));
-		
+
 //		String fileRealName = picture
 //				.getOriginalFilename();
 //		System.out.println(fileRealName);
@@ -86,34 +116,9 @@ public class PostController {
 //		
 //		File saveFile = new File(uploadFolder);
 		
-//		if(!fileRealName.getOriginalFilename().equals("")) {
-//			String originName = saveFile.getOriginalFilename(); // "flower.png"
-//
-//	        String currentTime = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date()); // "202201181036"
-//			int ranNum = (int)(Math.random() * 90000 + 10000); // 46521 (5자리랜덤값)
-//	        String ext = originName.substring(originName.lastIndexOf(".")); // ".png"
-//
-//	        String changeName = currentTime + ranNum + ext;
-//
-//	        // 업로드한 파일을 보관할 폴더의 물리적인 경로 알아내어 파일을 changeName의 이름으로 저장
-//	        // 물리적인 경로는 세션객체를 먼저 얻어내서 겟리얼패스메소드까지 호출
-//	        String savePath = session.getServletContext().getRealPath("/resources/uploadFiles/");
-//
-//	        try {
-//	            upfile.transferTo(new File(savePath + changeName));
-//	        } catch ( IOException e) {
-//	            e.printStackTrace();
-//	        }
-//	        
-//	        //String changeName = saveFile(upfile, session);
-//	        // 세이브파일메소드를 업파일과 세션을 전달해서 호출. 리턴된 것을 체인지네임에 담기
-//
-//	        // 원본명, 서버업로드된경로를 Board b에 이어서 담기
-//	        //b.setOriginName(upfile.getOriginalFilename());
-//	        post.setPicture("resources/uploadFiles/" + changeName); // 어떤 경로에 저장되었는지도 같이 담기
-//
-//		}
+
 		int post_id = postService.insertPost(post);
+		
 		bannerService.updateRecruitingTeam();
 				
 		String tags = request.getParameter("tag");
@@ -127,7 +132,7 @@ public class PostController {
 		tagService.insertTag(tag);
 		for(int i=0; i<tagsArr.length; i++) {
 			result = tagCountService.checkTag(tagsArr[i]);
-			System.out.println(result);
+//			System.out.println(result);
 			// 만약 데이터베이스 내에 존재하면 해당 컬럼 값 + 1  
 			if(result == 1) {
 				// 해당 컬럼의 값 +1 해주는 쿼리 호출
@@ -142,9 +147,12 @@ public class PostController {
 		ModelAndView mv = new ModelAndView();
 		
 		String pTitle = post.getTitle();
-		System.out.println(post.getTitle());
+//		System.out.println(post.getTitle());
+//		System.out.println(filePath);
 		mv.addObject("pTitle", pTitle);
 		mv.addObject("post", post);
+//		mv.addObject("filePath", filePath);
+		
 		mv.setViewName("Project");
 		
 		return "redirect:/main/mainpage";

@@ -7,17 +7,19 @@ public class Post {
 	private int writer_id;
 	private String title;
 	private String content;
+	private String picture;
 	private int status;
 	private String mod_date;
 	private String post_date;
-//	private MultipartFile picture;
-//	private String filePath;
-//	private long fileSize;
-	String picture;
+
+	private String picturePath;
+	
+
+
 	private int ddib_count;
 	private int form_count;
-//	private long fileSize;
-//	
+
+	
 	public int getPost_id() {
 		return post_id;
 	}
@@ -48,6 +50,12 @@ public class Post {
 	public void setStatus(int status) {
 		this.status = status;
 	}
+	public String getPicture() {
+		return picture;
+	}
+	public void setPicture(String picture) {
+		this.picture = picture;
+	}
 	public String getMod_date() {
 		return mod_date;
 	}
@@ -60,12 +68,7 @@ public class Post {
 	public void setPost_date(String post_date) {
 		this.post_date = post_date;
 	}
-	public String getPicture() {
-		return picture;
-	}
-	public void setPicture(String picture) {
-		this.picture = picture;
-	}
+
 	public int getDdib_count() {
 		return ddib_count;
 	}
@@ -78,28 +81,13 @@ public class Post {
 	public void setForm_count(int form_count) {
 		this.form_count = form_count;
 	}
-//	public MultipartFile getPicture() {
-//		return picture;
-//	}
-//	public void setPicture(MultipartFile picture) {
-//		this.picture = picture;
-//	}
-//	public String getFilePath() {
-//		return filePath;
-//	}
-//	public void setFilePath(String filePath) {
-//		this.filePath = filePath;
-//	}
-//	public long getFileSize() {
-//		return fileSize;
-//	}
-//	public void setFileSize(long fileSize) {
-//		this.fileSize = fileSize;
-//	}
-//	public void setPicture(String parameter) {
-//		// TODO Auto-generated method stub
-//		
-//	}
+	public String getPicturePath() {
+		return picturePath;
+	}
+	public void setPicturePath(String picturePath) {
+		this.picturePath = picturePath;
+	}
+	
 	
 	
 }

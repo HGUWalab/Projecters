@@ -8,7 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+
+import org.springframework.validation.BindingResult;
+
 import org.springframework.web.bind.annotation.PathVariable;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -49,22 +53,19 @@ public class MainController {
 		System.out.println("Main page loaded");
 		List<Post> list;
 		List<String> top10tags;
-		//List<Tag> list2;
+		
 		
 		list = postService.getAllPost();
-		System.out.println(list);
+
 		
 		int recruiting = bannerService.getRecruitingTeam();
 		int formCount = bannerService.getFormCount();
 		int postCount = postService.getPostCount();
 		top10tags =  tagCountService.getTopTen();
-		//list2 = tagService.getTagList();
 		
-		System.out.println("Top 10 tags");
-		System.out.println(top10tags);
 		
 		mv.addObject("top10tags", top10tags);
-		//mv.addObject("list2", list2);
+		
 		mv.addObject("formCount", formCount);
 		mv.addObject("postList", list);
 		mv.addObject("postCount", postCount);
@@ -98,8 +99,22 @@ public class MainController {
 		return mv;	
 	}
 	
-	@RequestMapping(value = "/project", method = RequestMethod.GET)
-	public String project() {		
-		return "Project";
+	@RequestMapping(value = "/project/{post_id}", method = RequestMethod.GET)
+	public ModelAndView project(HttpServletRequest request, @PathVariable("post_id") int post_id) {		
+		ModelAndView mv = new ModelAndView();
+		System.out.println("==>project() in MainController: post_id = " + post_id);
+		Post post;
+		Tag tag;
+		
+		post = postService.getClickedPost(post_id);
+		tag = tagService.getTag(post_id);
+		System.out.println(post.getTitle() + tag.getTag_name());
+		
+		mv.addObject("post", post);
+		mv.addObject("tag", tag);
+		mv.setViewName("Project");
+		
+		
+		return mv;
 	}
 }

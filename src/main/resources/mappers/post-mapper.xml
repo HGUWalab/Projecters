@@ -6,8 +6,11 @@
 		INSERT INTO projectwaco.Post(writer_id, title, 
 		content, picture)
 		VALUES
-		(#{writer_id}, #{title}, #{content}, #{picture})
+		(#{writer_id}, #{title}, #{content}, #{picturePath})
 	</insert>
+	<select id="getClickedPost" resultType="com.walab.Projecters.Bean.Post">
+		SELECT * FROM projectwaco.Post WHERE post_id = #{post_id}
+	</select>
  
 	<select id="getPost" resultType="com.walab.Projecters.Bean.Post">
 		SELECT post_id, title, content, status, picture, ddib_count, form_count 
@@ -21,7 +24,7 @@
 	
 	<select id="getAllPost" resultType="map">
 		SELECT Post.post_id, picture, title, tag_name, form_count
-		FROM (projectwaco.Post JOIN projectwaco.Tag ON Post.post_id = Tag.post_id) 
+		FROM (Post JOIN Tag ON Post.post_id = Tag.post_id) 
 	</select>
 	 
 	 <select id="getPostCount" resultType="int">
