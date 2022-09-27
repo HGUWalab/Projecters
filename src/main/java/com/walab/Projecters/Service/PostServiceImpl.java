@@ -30,6 +30,11 @@ public class PostServiceImpl implements PostService {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	
+	@Override
+	public Post getClickedPost(int post_id) {
+		return dao.getClickedPost(post_id);
+	}
 
 	@Override
 	public Post getPost(int id) {

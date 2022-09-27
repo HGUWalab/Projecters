@@ -12,6 +12,8 @@ public interface PostService {
 	public int updatePost(Post post);
 	
 	public Post getPost(int id);
+	
+	public Post getClickedPost(int post_id);
 		
 	public List<Post> getAllPost();
 	

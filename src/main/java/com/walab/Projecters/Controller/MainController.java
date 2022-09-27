@@ -99,8 +99,22 @@ public class MainController {
 		return mv;	
 	}
 	
-	@RequestMapping(value = "/project", method = RequestMethod.GET)
-	public String project() {		
-		return "Project";
+	@RequestMapping(value = "/project/{post_id}", method = RequestMethod.GET)
+	public ModelAndView project(HttpServletRequest request, @PathVariable("post_id") int post_id) {		
+		ModelAndView mv = new ModelAndView();
+		System.out.println("==>project() in MainController: post_id = " + post_id);
+		Post post;
+		Tag tag;
+		
+		post = postService.getClickedPost(post_id);
+		tag = tagService.getTag(post_id);
+		System.out.println(post.getTitle() + tag.getTag_name());
+		
+		mv.addObject("post", post);
+		mv.addObject("tag", tag);
+		mv.setViewName("Project");
+		
+		
+		return mv;
 	}
 }
