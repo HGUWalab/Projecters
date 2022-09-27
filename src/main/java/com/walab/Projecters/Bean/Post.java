@@ -13,7 +13,7 @@ public class Post {
 //	private MultipartFile picture;
 //	private String filePath;
 //	private long fileSize;
-//	String picture;
+	String picture;
 	private int ddib_count;
 	private int form_count;
 //	private long fileSize;
@@ -60,12 +60,12 @@ public class Post {
 	public void setPost_date(String post_date) {
 		this.post_date = post_date;
 	}
-//	public String getPicture() {
-//		return picture;
-//	}
-//	public void setPicture(String picture) {
-//		this.picture = picture;
-//	}
+	public String getPicture() {
+		return picture;
+	}
+	public void setPicture(String picture) {
+		this.picture = picture;
+	}
 	public int getDdib_count() {
 		return ddib_count;
 	}
