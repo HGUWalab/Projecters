@@ -59,7 +59,7 @@ public class PostController {
 	}
 	
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
-	public String addPost(HttpServletRequest request,  @RequestParam("picture") MultipartFile picture) {
+	public String addPost(HttpServletRequest request) {
 		// Post Bean에 데이터 추가 후 DB에 올리는 방법
 		System.out.println("여긴 왔네");
 		Post post = new Post();
@@ -71,21 +71,20 @@ public class PostController {
 		post.setContent(request.getParameter("content"));
 		
 		post.setPicture(request.getParameter("picture"));
-		System.out.println("이미지 주소: " + request.getParameter("picture"));
 		
-		String fileRealName = picture
-				.getOriginalFilename();
-		System.out.println(fileRealName);
-		long size = picture.getSize();
-		System.out.println(size);
-		
-		String fileExtension = fileRealName.substring(fileRealName.lastIndexOf("."), fileRealName.length());
-		System.out.println("확장명: " + fileExtension);
-		String  storedFileName = UUID.randomUUID().toString().replaceAll("-", "") + fileExtension;
-		String uploadFolder = request.getSession().getServletContext().getRealPath("/").concat("resources/img/")+ storedFileName;
-		System.out.println("업로드 폴더 :" + uploadFolder);
-		
-		File saveFile = new File(uploadFolder);
+//		String fileRealName = picture
+//				.getOriginalFilename();
+//		System.out.println(fileRealName);
+//		long size = picture.getSize();
+//		System.out.println(size);
+//		
+//		String fileExtension = fileRealName.substring(fileRealName.lastIndexOf("."), fileRealName.length());
+//		System.out.println("확장명: " + fileExtension);
+//		String  storedFileName = UUID.randomUUID().toString().replaceAll("-", "") + fileExtension;
+//		String uploadFolder = request.getSession().getServletContext().getRealPath("/").concat("resources/img/")+ storedFileName;
+//		System.out.println("업로드 폴더 :" + uploadFolder);
+//		
+//		File saveFile = new File(uploadFolder);
 		
 //		if(!fileRealName.getOriginalFilename().equals("")) {
 //			String originName = saveFile.getOriginalFilename(); // "flower.png"

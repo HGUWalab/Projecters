@@ -37,7 +37,7 @@
         			"title": title,
         			"content": content,
         			"tag": tag,
-        		/* 	"picture": picture */
+        			"picture": "https://handong.edu/site/handong/res/img/sub_880-01.png"
         		},success: function(data){
       			  location.href="../main/project";
         		}
@@ -119,7 +119,7 @@
                                         	<ul id="tag-list"></ul>                        
                                     	</div> 
                                     	
-                                        <div class="form-floating mb-3">
+                                      <!--   <div class="form-floating mb-3">
 
 											 <div class="center">
 												  <div class="form-input">
@@ -131,7 +131,7 @@
 												   		</div>	    
 											  	</div>
 											</div> 
-                                       	</div>
+                                       	</div> -->
                                        <div class="mt-4 mb-0">
                                             <div class="d-grid">
                                             	<a class="btn btn-primary btn-block" onclick="submit()">완료</a>
