@@ -65,8 +65,8 @@ public class PostController {
 		return "ProjectForm";
 	}
 	
-	@RequestMapping(value = "/add", method = RequestMethod.GET)
-	public String addPost(HttpServletRequest request) {
+	@RequestMapping(value = "/add", method = RequestMethod.POST)
+	public ModelAndView addPost(HttpServletRequest request) {
 		System.out.println("여긴 왔네");
 		
 		Post post = new Post();
@@ -155,7 +155,7 @@ public class PostController {
 		
 		mv.setViewName("Project");
 		
-		return "redirect:/main/mainpage";
+		return mv;
 	}
 	
 	/*나중에 게시글 직접적으로 눌렀을때 이동하는 용도*/

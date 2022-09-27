@@ -101,7 +101,7 @@ function goDetail(post_id){
 	  				 	<div class="projectCard col-md-4">
 		  				 	<div class="topInfo">
 		  				 	<!-- <img class="thumb" src="${pList.picture}"/> -->
-		  				 	<img class="thumb" src="/resources/img/${pList.picture}"/>
+		  				 	<img class="thumb" src="${pList.picture}"/>
 		  				 		<%-- <img class="thumb" src="${tmpFilePath}/${pList.picture}"> --%> 	  				 		
 		  				 		<%-- <img class="thumb" src="<%=request.getContextPath()%>/${pList.picture}">  배포 때 이거 --%>
 		  				 		<div class="postTags">

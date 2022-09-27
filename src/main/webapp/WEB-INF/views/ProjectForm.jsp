@@ -23,7 +23,7 @@
         
         <link href="../resources/css/styles.css?ver=${1}" rel="stylesheet" />
         <link href="../resources/css/postform.css?ver=${2}" rel="stylesheet" />
-<<<<<<< HEAD
+
         <script>
         function submit(){
         	var title = document.getElementById("inputTitle").value;
@@ -33,14 +33,14 @@
  */        	
         	$.ajax({
         		url: "../post/add",
-        		type: 'GET',
+        		type: 'POST',
         		data: {
         			"title": title,
         			"content": content,
         			"tag": tag,
         			"picture": "https://handong.edu/site/handong/res/img/sub_880-01.png"
         		},success: function(data){
-      			  location.href="../main/project";
+      				location.href="../main/mainpage/";
         		}
         	})     	
         }
@@ -99,7 +99,7 @@
                                        	</div> -->
                                        <div class="mt-4 mb-0">
                                             <div class="d-grid">
-                                            	<a class="btn btn-primary btn-block" onclick="send()">완료</a>
+                                            	<a class="btn btn-primary btn-block" onclick="submit()">완료</a>
                                             </div>
                                       </div>
                                     </form>
@@ -113,7 +113,7 @@
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="../resources/js/scripts.js?ver=2"></script>
-        <script>
+    <!--     <script>
         function send(){
         	/* var title = document.getElementById("inputTitle").value;
         	var content = document.getElementById("inputDesc").value;
@@ -149,7 +149,7 @@
         	})       	
         }
         </script>
-        <script type="text/javascript">
+       -->  <script type="text/javascript">
 			  function showPreview(event){
 			  if(event.target.files.length > 0){
 			    var src = URL.createObjectURL(event.target.files[0]);
