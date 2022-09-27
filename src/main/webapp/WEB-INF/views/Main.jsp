@@ -63,7 +63,7 @@
             </div>
             <div class="mainContent">
                 <div class="totalState ">
-                    <h6 class="b1">현재 <b>팀플인</b>에서 </h6>
+                    <h6 class="b1">현재 <b>팀플인</b>에서</h6>
                     <h6 class="p1">${formCount}</h6>
                     <h6 class="b1">명이 프로젝트에 신청하였으며 </h6>
                     <h6 class="p1">${postCount}</h6>
@@ -74,12 +74,15 @@
                     <h4>모집중인 프로젝트만 보기</h4>
                     <input type="checkbox" id="switch" /><label for="switch">Toggle</label>
                 </div>
-                
+               
                 <div class="projectCards row">
 	  				 <c:forEach var="pList" items="${postList}">
 	  				 	<div class="projectCard col-md-4">
 		  				 	<div class="topInfo">
-		  				 		<img class="thumb" src="${pList.picture}">
+		  				 	<!-- <img class="thumb" src="${pList.picture}"/> -->
+		  				 	<img class="thumb" src="/resources/img/${pList.picture}"/>
+		  				 		<%-- <img class="thumb" src="${tmpFilePath}/${pList.picture}"> --%> 	  				 		
+		  				 		<%-- <img class="thumb" src="<%=request.getContextPath()%>/${pList.picture}">  배포 때 이거 --%>
 		  				 		<div class="postTags">
 			  				 		<c:forTokens var="tag" items="${pList.tag_name}" delims=",">
 										<h5 class="postTag">${tag}</h5>

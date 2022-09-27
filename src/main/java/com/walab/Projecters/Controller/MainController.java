@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -44,23 +45,21 @@ public class MainController {
 		System.out.println("Main page loaded");
 		List<Post> list;
 		List<String> top10tags;
-		//List<Tag> list2;
+		
 		
 		list = postService.getAllPost();
-		System.out.println(list);
+
 		
 		int recruiting = bannerService.getRecruitingTeam();
 		int formCount = bannerService.getFormCount();
 		int postCount = postService.getPostCount();
 		top10tags =  tagCountService.getTopTen();
-		//list2 = tagService.getTagList();
 		
-		System.out.println("Top 10 tags");
-		for(int i=0; i<top10tags.size(); i++)
-			System.out.println(top10tags);
+		
+
 		
 		mv.addObject("top10tags", top10tags);
-		//mv.addObject("list2", list2);
+		
 		mv.addObject("formCount", formCount);
 		mv.addObject("postList", list);
 		mv.addObject("postCount", postCount);
