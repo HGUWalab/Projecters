@@ -8,7 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+
 import org.springframework.validation.BindingResult;
+
+import org.springframework.web.bind.annotation.PathVariable;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -16,9 +20,13 @@ import org.springframework.web.servlet.ModelAndView;
 import com.walab.Projecters.Bean.Post;
 import com.walab.Projecters.Bean.Tag;
 import com.walab.Projecters.Service.BannerService;
+import com.walab.Projecters.Service.BannerServiceImpl;
 import com.walab.Projecters.Service.PostService;
+import com.walab.Projecters.Service.PostServiceImpl;
 import com.walab.Projecters.Service.TagCountService;
+import com.walab.Projecters.Service.TagCountServiceImpl;
 import com.walab.Projecters.Service.TagService;
+import com.walab.Projecters.Service.TagServiceImpl;
 
 /*
 * 메인페이지 담당하는 컨트롤러
@@ -27,16 +35,16 @@ import com.walab.Projecters.Service.TagService;
 @RequestMapping("/main")
 public class MainController {
 	@Autowired 
-	PostService postService;
+	PostServiceImpl postService;
 	
 	@Autowired
-	TagService tagService;
+	TagServiceImpl tagService;
 	
 	@Autowired
-	TagCountService tagCountService;
+	TagCountServiceImpl tagCountService;
 	
 	@Autowired
-	BannerService bannerService; 
+	BannerServiceImpl bannerService; 
 	
 	
 	@RequestMapping(value = "/mainpage", method = RequestMethod.GET)
@@ -56,8 +64,6 @@ public class MainController {
 		top10tags =  tagCountService.getTopTen();
 		
 		
-
-		
 		mv.addObject("top10tags", top10tags);
 		
 		mv.addObject("formCount", formCount);
@@ -67,6 +73,30 @@ public class MainController {
 		return mv;
 		
 		
+	}
+	
+	@RequestMapping(value = "/mainpage/{search}", method = RequestMethod.GET)
+	public ModelAndView viewSearch(HttpServletRequest request, @PathVariable("search") String search) {
+		ModelAndView mv = new ModelAndView();
+		System.out.println("==> viewSearch() in MainController: SearchText = " + search);
+		List<Post> list;
+		List<String> top10tags;
+		int recruiting = bannerService.getRecruitingTeam();
+		int formCount = bannerService.getFormCount();
+		int postCount = postService.getPostCount();
+		top10tags =  tagCountService.getTopTen();
+		
+		
+		list = postService.searchPosts(search);
+		System.out.println("Searched List = " + list);
+		
+		mv.addObject("top10tags", top10tags);
+		mv.addObject("formCount", formCount);
+		mv.addObject("postList", list);
+		mv.addObject("postCount", postCount);
+		mv.setViewName("Main");
+	
+		return mv;	
 	}
 	
 	@RequestMapping(value = "/project", method = RequestMethod.GET)

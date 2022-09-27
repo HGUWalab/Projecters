@@ -19,6 +19,7 @@ import com.walab.Projecters.Bean.User;
 import com.walab.Projecters.Service.DdibService;
 import com.walab.Projecters.Service.FormService;
 import com.walab.Projecters.Service.PostService;
+import com.walab.Projecters.Service.PostServiceImpl;
 import com.walab.Projecters.Service.UserServiceImpl;
 
 
@@ -34,7 +35,7 @@ public class MyPageController {
 	UserServiceImpl userService;
 	
 	@Autowired 
-	PostService postService;
+	PostServiceImpl postService;
 	
 	@Autowired
 	FormService formService;
@@ -49,7 +50,7 @@ public class MyPageController {
 		User user = (User) session.getAttribute("login");
 		List<Post> list;
 		list = postService.getMyPosts(user.getUser_id());
-		System.out.println(list);
+		System.out.println("MyPage1 List = " + list);
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("Mypage1");
 		mv.addObject("user", user);
@@ -64,7 +65,7 @@ public class MyPageController {
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("login");
 		List<MyPageForm> listForm = formService.getMyPageForms(user.getUser_id());
-		System.out.println(listForm);
+		System.out.println("MyPage2 List = " + listForm);
 		mv.addObject("formList", listForm);
 		mv.addObject("user", user);
 		mv.setViewName("Mypage2");	

@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -64,8 +65,10 @@ public class PostController {
 		return "ProjectForm";
 	}
 	
+
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public String addPost(HttpServletRequest request, @RequestParam("picture") CommonsMultipartFile picture, HttpSession s) {
+
 		// Post Bean에 데이터 추가 후 DB에 올리는 방법
 		// 로그인 
 		System.out.println("여긴 왔네");
@@ -101,9 +104,27 @@ public class PostController {
 		post.setWriter_id(user.getUser_id());//writer_id 받아오는
 		post.setTitle(request.getParameter("title"));
 		post.setContent(request.getParameter("content"));
-//		post.setPicturePath(uploadFolder);
-//		System.out.println("post의 업로드 파일 경로: " + post.getPicturePath());
+
+
 		
+		post.setPicturePath(request.getParameter("picture"));
+		System.out.println("이미지 주소: " + request.getParameter("picture"));
+		
+		String fileRealName = picture
+				.getOriginalFilename();
+		System.out.println(fileRealName);
+		long size = picture.getSize();
+		System.out.println(size);
+		
+		String fileExtension = fileRealName.substring(fileRealName.lastIndexOf("."), fileRealName.length());
+		System.out.println("확장명: " + fileExtension);
+		String  storedFileName = UUID.randomUUID().toString().replaceAll("-", "") + fileExtension;
+		String uploadFolder = request.getSession().getServletContext().getRealPath("/").concat("resources/img/")+ storedFileName;
+		System.out.println("업로드 폴더 :" + uploadFolder);
+		
+		File saveFile = new File(uploadFolder);
+		
+
 		int post_id = postService.insertPost(post);
 		
 		bannerService.updateRecruitingTeam();
@@ -156,6 +177,7 @@ public class PostController {
 		System.out.println("==>viewPost() in PostController: load data of the post and move to the page");
 		return mv;
 	}
+
 
 //	private String saveFile(MultipartFile upfile, HttpSession session) {
 //		// TODO Auto-generated method stub

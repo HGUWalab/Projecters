@@ -10,10 +10,11 @@ public class Post {
 	private int status;
 	private String mod_date;
 	private String post_date;
+
 	private String picturePath;
 	
 
-	
+
 	private int ddib_count;
 	private int form_count;
 
@@ -60,6 +61,7 @@ public class Post {
 	public void setPost_date(String post_date) {
 		this.post_date = post_date;
 	}
+
 	public int getDdib_count() {
 		return ddib_count;
 	}

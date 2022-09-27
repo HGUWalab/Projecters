@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<!DOCTYPE html>
-<html>
-<head>
+	<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+	<!DOCTYPE html>
+	<html>
+	<head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -12,16 +12,17 @@
         <meta name="author" content="" />
         <title>Projecters</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-        <link href="../resources/css/styles.css?ver=1005" rel="stylesheet" />
-        <link href="../resources/css/mypage.css?ver=10552" rel="stylesheet" />
+        <link href="../resources/css/styles.css?ver=1305" rel="stylesheet" />
+        <link href="../resources/css/mypage.css?ver=1659" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
+
         <nav class="sb-topnav navbar navbar-expand">
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-0 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Brand-->
-            <a class="navbar-brand" href="${pageContext.request.contextPath}/main/mainpage"><img src="../resources/img/logo.png"></a>
+             <a class="navbar-brand" onclick="location.href='${pageContext.request.contextPath}/main/mainpage'"><img src="../resources/img/logo.png"></a>
             
 
         </nav>
@@ -59,10 +60,28 @@
                             <div class="card text-black mb-4">
                                 <div class="d-flex card-body">
                                     <div class="card-info">
-                                        <button class="card-status">
-                                            <h6 class="state-button">모집중</h6>
-                                        </button>
-                                        <a href="#" class="textButton">모집 마감하기</a>
+                                        
+                                     	
+                                         <c:set var = "status" scope = "session" value = "${pList.status}"/>
+                                    	
+										       <c:choose>
+										         <c:when test ="${status eq 1}">
+											         <button class="card-status">
+											            <h6 class="state-button">모집중 </h6>
+										              </button>
+										               <a href="#" class="textButton">모집 마감하기</a>
+										         </c:when>
+										
+										         <c:when test = "${status eq 0}">
+										            <button class="card-status disable">
+											            <h6 class="state-button ">모집 마감 </h6>
+										              </button>
+										               <a href="#" class="textButton">추가 모집하기</a>
+										         </c:when>
+										 
+										      </c:choose>
+                                     
+                                       
                                     </div>
                                     <h5 class="cardTitle">${pList.title}</h5>
                                    
@@ -70,7 +89,7 @@
                                 <div class="card-footer d-flex  justify-content-end">
                                     
                                     <div class="applicant small text-black">👋 현재 신청자  <strong> ${pList.form_count}명</strong></div>
-                                    <div class="card-action">
+                                    <div class="card-action ">
                                         <button class="cardButton">
                                             수정
                                         </button>

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+        <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +21,7 @@
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-0 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Brand-->
-            <a class="navbar-brand" href="index.html"><img src="../resources/img/logo.png"></a>
+             <a class="navbar-brand" onclick="location.href='${pageContext.request.contextPath}/main/mainpage'"><img src="../resources/img/logo.png"></a>
 
         </nav>
         <div id="layoutSidenav">
@@ -52,6 +54,7 @@
                     <div class="container-fluid px-4">
                         <h1 class="mypageTabTitle mt-4">내가 찜한 프로젝트</h1>
                         <div class="row">
+                        <c:forEach var="pList" items="${ddibList}">
                             <div class="card text-black mb-4">
                                 <div class="d-flex card-body">
                                     <div class="card-info">
@@ -60,12 +63,12 @@
                                         </button>
 
                                     </div>
-                                    <h5 class="cardTitle"> 📱 Flutter를 이용한 앱 개발 프로젝트</h5>
+                                    <h5 class="cardTitle">${pList.title}</h5>
                                    	
                                 </div>
                                 <div class="card-footer d-flex  justify-content-end">
                                     
-                                    <div class="applicant small text-black">👋 현재 신청자  <strong> 18명</strong></div>
+                                    <div class="applicant small text-black">👋 현재 신청자  <strong> ${pList.form_count}명</strong></div>
                                     <div class="card-action">
                                       
                                         <button class="cardButton">
@@ -74,6 +77,7 @@
                                     </div>
                                 </div>
                             </div>
+                        </c:forEach>	
                         </div>
                     </div>
                 </main>

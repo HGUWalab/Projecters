@@ -33,7 +33,10 @@
 	 </select>
 	
 	<select id="getMyPosts" resultType="map">
-	 	SELECT Post.post_id, picture, title, form_count FROM projectwaco.Post where writer_id = #{id}
+	 	SELECT * FROM projectwaco.Post where writer_id = #{id}
 	 </select>
 	 
+	 <select id="searchPosts" resultType="map">
+		SELECT * FROM projectwaco.Post WHERE (Post.title LIKE  #{searchText} OR Post.content LIKE  #{searchText})	 
+	</select>
 </mapper>
