@@ -16,6 +16,7 @@
         <link href="../resources/css/mypage.css?ver=10592" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
+    
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand">
             <!-- Sidebar Toggle-->
@@ -102,15 +103,15 @@
                                     <div class="card-action d-flex">
                                       <c:choose>
 									    <c:when test ="${post_status eq 1}">
-	                                        <button class="cardButton">취소</button>
-	                                        <button class="cardButton" disabled>삭제</button>
+	                                        <button onclick="onclick();" class="cardButton cancel">취소</button>
+	                                        <button class="cardButton delete" disabled>삭제</button>
                                         </c:when>
 									    <c:when test = "${post_status eq 0}">
-									        <button class="cardButton" disabled>취소</button>
-                                        	<button class="cardButton">삭제</button>
+									        <button class="cardButton cancel" disabled>취소</button>
+                                        	<button onclick="onclick();" class="cardButton delete">삭제</button>
                                         </c:when>
                                        </c:choose>
-                                    </div>
+                                     </div>
                                 </div>
                             </div>
                          </c:forEach>
@@ -132,10 +133,35 @@
             </div>
       
         </div>
+  		<script type="text/javascript">
+  		function onclick() {
+           $('.cancel').click(function(e) {
+               e.preventDefault();
+               var message_alert = $('<p>신청을 취소합니다.<br>정말로 취소하시겠습까?</p>').dialog({
+                   buttons: {
+                       "아니요": function() {},
+                       "네":  function() {alert('취소 되었습니다.');},
+                      
+                   }
+                });
+           });
+           $('.delete').click(function(e) {
+               e.preventDefault();
+               var message_alert = $('<p>목록에서 삭제합니다. <br>정말로 삭제하시겠습까?</p>').dialog({
+                   buttons: {
+                       "아니요": function() {},
+                       "네":  function() {alert('삭제 되었습니다.');},
+                      
+                   }
+                });
+           });
+  		}
+       </script>
+                          
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="../../js/scripts.js"></script>
+        <script src="../resources/js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-        <script src="../../js/datatables-simple-demo.js"></script>
+        <script src="../resources/js/datatables-simple-demo.js"></script>
     </body>
 </html>

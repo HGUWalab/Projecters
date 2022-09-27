@@ -124,7 +124,7 @@
 											 <div class="center">
 												  <div class="form-input">
 													    <label for="file-ip-1">Upload Image</label>
-													    <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);" name="picture"/s>
+													    <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);" name="picture"/>
 													    
 														<div class="preview">
 													      <img id="file-ip-1-preview">
