@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Dashboard - SB Admin</title>
+        <title>팀플,in</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="../resources/css/styles.css?ver=1045" rel="stylesheet" />
         <link href="../resources/css/mypage.css?ver=10592" rel="stylesheet" />
@@ -63,13 +63,13 @@
                            			<c:set var = "form_status" scope = "session" value = "${pList.form_status}"/>
                              		<c:set var = "post_status" scope = "session" value = "${pList.post_status}"/>
 	                             	<c:choose>
-								         <c:when test ="${post_status eq 1}">
+								         <c:when test ="${post_status eq 0}">
 									         <button class="card-status">
 									            <h6 class="state-button">모집중 </h6>
 								              </button>
 								         </c:when>
 								
-								         <c:when test = "${post_status eq 0}">
+								         <c:when test = "${post_status eq 1}">
 								            <button class="card-status disable">
 									            <h6 class="state-button ">모집 마감 </h6>
 								              </button>

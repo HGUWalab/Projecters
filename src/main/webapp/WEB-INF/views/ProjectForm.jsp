@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>TEAMPLEIN</title>
+        <title>팀플,in</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -40,7 +40,7 @@
         			"tag": tag,
         			"picture": "https://handong.edu/site/handong/res/img/sub_880-01.png"
         		},success: function(data){
-      				/* location.href="../main/project/" */
+      				location.href="../main/mainpage"
         		}
         	})     	
         }

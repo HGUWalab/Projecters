@@ -40,6 +40,6 @@
 	 </select>
 	 
 	 <select id="searchPosts" resultType="map">
-		SELECT * FROM projectwaco.Post WHERE (Post.title LIKE  #{searchText} OR Post.content LIKE  #{searchText})	 
+		SELECT * FROM projectwaco.Post join Tag on Post.post_id = Tag.post_id WHERE (Post.title LIKE  #{searchText} OR Post.content LIKE  #{searchText}) 
 	</select>
 </mapper>

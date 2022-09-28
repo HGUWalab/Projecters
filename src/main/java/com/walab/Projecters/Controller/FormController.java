@@ -39,17 +39,17 @@ public class FormController {
 		
 		int writer_id = postService.getWriterId(post_id);
 		User user = (User) session.getAttribute("login");
-		
-		if (user.getUser_id() == writer_id) {
-			System.out.println("==> You cannot apply your project!");
-			mv.setViewName("redirect:/main/mainpage");
-			return mv;
-		}else {
+//		
+//		if (user.getUser_id() == writer_id) {
+//			System.out.println("==> You cannot apply your project!");
+//			mv.setViewName("redirect:/main/mainpage");
+//			return mv;
+//		}else {
 			mv.addObject("post_id", post_id);
 			mv.setViewName("ApplyProject");
 			System.out.println("==> apply() in FormController: open page with post id = " + post_id);
 			return mv;
-		}
+//		}
 	}
 	
 	@RequestMapping(value="/apply", method=RequestMethod.GET)
