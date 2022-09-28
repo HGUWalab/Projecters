@@ -113,43 +113,7 @@
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="../resources/js/scripts.js?ver=2"></script>
-    <!--     <script>
-        function send(){
-        	/* var title = document.getElementById("inputTitle").value;
-        	var content = document.getElementById("inputDesc").value;
-        	var tag = document.getElementById("tag").value;
-        	var picture = document.getElementById("file-ip-1-preview").src; */
-        	var form = $('#frm')[0];
-        	var data = new FormData(form);
-        	console.log(data);
- 			
-         	 $.ajax({
-        		url: "../post/add",
-        		/* type: 'GET', */
-        		type: 'POST',
-        		enctype: 'multipart/form-data',
-        		data: data,
-        		dataType: 'json',
-        		processData: false,
-        		contentType: false, 
-        		/*data: {
-        			"title": title,
-        			"content": content,
-        			"tag": tag,
-        		 	"picture": picture
-        		},*/
-        		success: function(data){
-        		console.log(data);
-      			  location.href="../main/project";
-        		}
-      /*   		error: function(e){
-        			console.log("ERROR : ", e);
-        		}
-       */
-        	})       	
-        }
-        </script>
-       -->  <script type="text/javascript">
+		 <script type="text/javascript">
 			  function showPreview(event){
 			  if(event.target.files.length > 0){
 			    var src = URL.createObjectURL(event.target.files[0]);
@@ -159,5 +123,6 @@
 			  }
 			}
 		</script>
+	
     </body>
 </html>

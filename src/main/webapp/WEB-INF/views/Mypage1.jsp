@@ -13,7 +13,7 @@
         <title>Projecters</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="../resources/css/styles.css?ver=1305" rel="stylesheet" />
-        <link href="../resources/css/mypage.css?ver=1659" rel="stylesheet" />
+        <link href="../resources/css/mypage.css?ver=1650" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
@@ -93,9 +93,10 @@
                                         <button class="cardButton">
                                             수정
                                         </button>
-                                        <button class="cardButton">
-                                            신청자 보기
+					                    <button class="cardButton">
+                                            신청자보기
                                         </button>
+                              
                                     </div>
                                 </div>
                             </div>
@@ -117,6 +118,8 @@
                 </footer>
             </div>
         </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="../resources/js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
