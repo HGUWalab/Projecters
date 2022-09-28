@@ -40,7 +40,7 @@
         			"tag": tag,
         			"picture": "https://handong.edu/site/handong/res/img/sub_880-01.png"
         		},success: function(data){
-      				location.href="../main/mainpage/";
+      				/* location.href="../main/project/" */
         		}
         	})     	
         }

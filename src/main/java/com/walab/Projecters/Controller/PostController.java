@@ -64,7 +64,6 @@ public class PostController {
 		System.out.println("==> post() in PostController: move to PostPage");
 		return "ProjectForm";
 	}
-	
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public ModelAndView addPost(HttpServletRequest request) {
 		System.out.println("여긴 왔네");
@@ -72,49 +71,13 @@ public class PostController {
 		Post post = new Post();
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("login");
-		
-//		byte[] data = picture.getBytes();
-//		String filePath = s.getServletContext().getRealPath("/")
-//				+"resources" + File.separator 
-//				+ "img" + File.separator + picture.getOriginalFilename();
-//		
-//		
-//		String tmpFilePath =s.getServletContext().getRealPath("/"); 
-//		
-// 		
-//		System.out.println("filePath: " + filePath);
-//		try {
-//			FileOutputStream fileout = new FileOutputStream(filePath);
-//			fileout.write(data);
-//			fileout.close();
-//			
-////			post.setPicturePath(dbSave);
-//			post.setPicturePath(picture.getOriginalFilename());
-//		} catch (FileNotFoundException e) {
-//			throw new RuntimeException(e); 
-//		} catch (IOException e){
-//			throw new RuntimeException(e);
-//		}
 
 		
 		post.setWriter_id(user.getUser_id());//writer_id 받아오는
 		post.setTitle(request.getParameter("title"));
 		post.setContent(request.getParameter("content"));
 		post.setPicture(request.getParameter("picture"));
-
-//		String fileRealName = picture
-//				.getOriginalFilename();
-//		System.out.println(fileRealName);
-//		long size = picture.getSize();
-//		System.out.println(size);
-//		
-//		String fileExtension = fileRealName.substring(fileRealName.lastIndexOf("."), fileRealName.length());
-//		System.out.println("확장명: " + fileExtension);
-//		String  storedFileName = UUID.randomUUID().toString().replaceAll("-", "") + fileExtension;
-//		String uploadFolder = request.getSession().getServletContext().getRealPath("/").concat("resources/img/")+ storedFileName;
-//		System.out.println("업로드 폴더 :" + uploadFolder);
-//		
-//		File saveFile = new File(uploadFolder);
+		System.out.println("이미지 주소: " + request.getParameter("picture"));
 		
 
 		int post_id = postService.insertPost(post);
@@ -147,17 +110,16 @@ public class PostController {
 		ModelAndView mv = new ModelAndView();
 		
 		String pTitle = post.getTitle();
-//		System.out.println(post.getTitle());
-//		System.out.println(filePath);
+		System.out.println(post.getTitle());
+	
 		mv.addObject("pTitle", pTitle);
 		mv.addObject("post", post);
-//		mv.addObject("filePath", filePath);
+	
 		
 		mv.setViewName("Project");
 		
 		return mv;
 	}
-	
 	/*나중에 게시글 직접적으로 눌렀을때 이동하는 용도*/
 	@RequestMapping(value = "/project/{post_id}", method = RequestMethod.GET)
 	public ModelAndView viewPost(HttpServletRequest request, @PathVariable int post_id) {

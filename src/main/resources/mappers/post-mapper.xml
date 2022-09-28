@@ -6,7 +6,7 @@
 		INSERT INTO projectwaco.Post(writer_id, title, 
 		content, picture)
 		VALUES
-		(#{writer_id}, #{title}, #{content}, #{picturePath})
+		(#{writer_id}, #{title}, #{content}, #{picture})
 	</insert>
 	<select id="getClickedPost" resultType="com.walab.Projecters.Bean.Post">
 		SELECT * FROM projectwaco.Post WHERE post_id = #{post_id}
