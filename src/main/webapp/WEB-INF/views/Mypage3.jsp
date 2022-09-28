@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Dashboard - SB Admin</title>
+        <title>팀플,in</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="../resources/css/styles.css?ver=1005" rel="stylesheet" />
         <link href="../resources/css/mypage.css?ver=10552" rel="stylesheet" />
@@ -54,8 +54,8 @@
                     <div class="container-fluid px-4">
                         <h1 class="mypageTabTitle mt-4">내가 찜한 프로젝트</h1>
                         <div class="row">
-                        <c:forEach var="pList" items="${ddibList}">
-                            <div class="card text-black mb-4">
+<%--                         <c:forEach var="pList" items="${ddibList}">
+ --%>                            <div class="card text-black mb-4">
                                 <div class="d-flex card-body">
                                     <div class="card-info">
                                         <button class="card-status">
@@ -63,22 +63,22 @@
                                         </button>
 
                                     </div>
-                                    <h5 class="cardTitle">${pList.title}</h5>
+                                    <h5 class="cardTitle">"우울증 상담 전문 챗봇을 만드는 FutureRoi와 함께하실 디자이너 분을 모집합니다!!"</h5>
                                    	
                                 </div>
                                 <div class="card-footer d-flex  justify-content-end">
                                     
-                                    <div class="applicant small text-black">👋 현재 신청자  <strong> ${pList.form_count}명</strong></div>
+                                    <div class="applicant small text-black">👋 현재 신청자  <strong> 0명</strong></div>
                                     <div class="card-action">
-                                      
+                                    
                                         <button class="cardButton">
                                             삭제
                                         </button>
                                     </div>
                                 </div>
                             </div>
-                        </c:forEach>	
-                        </div>
+<%--                         </c:forEach>	
+ --%>                        </div>
                     </div>
                 </main>
                 <footer class="py-4 bg-light mt-auto">

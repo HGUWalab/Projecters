@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Projecters</title>
+        <title>팀플,in</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="../resources/css/styles.css?ver=1305" rel="stylesheet" />
         <link href="../resources/css/mypage.css?ver=1659" rel="stylesheet" />
@@ -65,14 +65,14 @@
                                          <c:set var = "status" scope = "session" value = "${pList.status}"/>
                                     	
 										       <c:choose>
-										         <c:when test ="${status eq 1}">
+										         <c:when test ="${status eq 0}">
 											         <button class="card-status">
 											            <h6 class="state-button">모집중 </h6>
 										              </button>
 										               <a href="#" class="textButton">모집 마감하기</a>
 										         </c:when>
 										
-										         <c:when test = "${status eq 0}">
+										         <c:when test = "${status eq 1}">
 										            <button class="card-status disable">
 											            <h6 class="state-button ">모집 마감 </h6>
 										              </button>

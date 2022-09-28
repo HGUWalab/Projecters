@@ -11,7 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Projecters</title>
+        <title>팀플,in</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -42,6 +42,9 @@ function searchPost() {
 function goDetail(post_id){
     var contextPath = sessionStorage.getItem("contextpath");
 	location.href = contextPath+"/main/project/"+post_id;
+}
+function Ddib(){
+	alert("찜 되었습니다!");
 }
 
 </script>
@@ -114,7 +117,7 @@ function goDetail(post_id){
 	               			<div class="bottomInfo">
 		               			<h4>👋  신청인원 ${pList.form_count}명</h4>	
 		               			<div class="postButtons"> 
-		               				<button onclick="location.href='${pageContext.request.contextPath}/ddib/${pList.post_id}'"><h5>찜하기</h5></button>
+		               				<button onclick="Ddib()"><h5>찜하기</h5></button>
 		               				<button onclick="location.href='${pageContext.request.contextPath}/form/postform/${pList.post_id}'"><h5>바로 신청하기</h5></button>
 		               			</div>
 	               			</div>

@@ -85,8 +85,6 @@ public class MainController {
 		int formCount = bannerService.getFormCount();
 		int postCount = postService.getPostCount();
 		top10tags =  tagCountService.getTopTen();
-		
-		
 		list = postService.searchPosts(search);
 		System.out.println("Searched List = " + list);
 		

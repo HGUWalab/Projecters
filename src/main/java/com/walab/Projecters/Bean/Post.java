@@ -12,7 +12,6 @@ public class Post {
 	private String mod_date;
 	private String post_date;
 
-	private String picturePath;
 	
 
 
@@ -81,13 +80,7 @@ public class Post {
 	public void setForm_count(int form_count) {
 		this.form_count = form_count;
 	}
-	public String getPicturePath() {
-		return picturePath;
-	}
-	public void setPicturePath(String picturePath) {
-		this.picturePath = picturePath;
-	}
-	
+
 	
 	
 }

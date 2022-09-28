@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TEAMPLEIN</title>
+    <title>팀플,in</title>
     <link href="${pageContext.request.contextPath}/resources/css/styles.css?ver=1" rel="stylesheet" />
     <link href="${pageContext.request.contextPath}/resources/css/project.css?ver=1" rel="stylesheet" />
 </head>
@@ -18,12 +18,12 @@
     <nav class="sb-topnav navbar navbar-expand justify-content-between">
         <!-- Navbar Brand-->
         <a class="navbar-brand" onclick="location.href='${pageContext.request.contextPath}/main/mainpage'"><img src="${pageContext.request.contextPath}/resources/img/logo.png"></a>
-        <a class="nav-link" href="mypage1.html">
+        <a class="nav-link" href="${pageContext.request.contextPath}/mypage/mypage1">
             <h3>Mypage</h3>
         </a>
     </nav>
    
-    <img class="thumb" src="${pageContext.request.contextPath}/resources/img/thumb.jpg">
+    <img class="thumb" src="${post.picture}">
     <div class="container">
         <div class="applycount text-center align-content-center">
             <h6 class="b1"><text-green>👋 ${post.form_count}</text-green>명이 신청하셨습니다</h6>
