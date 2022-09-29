@@ -21,7 +21,7 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
 
-		<link href="${pageContext.request.contextPath}/resources/css/main.css?ver=5" rel="stylesheet" />
+		<link href="${pageContext.request.contextPath}/resources/css/main.css?ver=10" rel="stylesheet" />
      	<link href="${pageContext.request.contextPath}/resources/css/styles.css?ver=1" rel="stylesheet" />
 </head>
 <script type="text/javascript" charset="utf-8">
