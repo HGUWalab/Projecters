@@ -67,6 +67,7 @@ public class PostController {
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public ModelAndView addPost(HttpServletRequest request) {
 		System.out.println("여긴 왔네");
+	 
 		
 		Post post = new Post();
 		HttpSession session = request.getSession();
